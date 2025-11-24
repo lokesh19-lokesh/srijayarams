@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="Sri Jayarama Group" className="h-16 w-auto" />
+          <img src={logo} alt="Sri Jayarama Group" className="h-24 w-auto -my-4" />
         </Link>
 
         {/* Desktop Navigation */}
