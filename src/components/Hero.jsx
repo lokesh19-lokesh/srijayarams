@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import tractorDesktop from "../assets/s11.webp";
+import tvsRaider from "../assets/s22.jpg";
+import marutiArena from "../assets/ss3.jpg";
+import marutiCommercial from "../assets/ss4.avif";
+import goodyear from "../assets/s55.jpg";
+import manufacturing from "../assets/manufacturing.jpg";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -8,48 +14,61 @@ const Hero = () => {
   const slides = [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070',
-      title: 'Leadership with Trust',
-      subtitle: 'Building a sustainable future through innovation and integrity.',
+      imageDesktop: tractorDesktop,
+      imageMobile: tractorDesktop,
+      title: 'Mahindra Tractor',
+      subtitle: 'Leading the field with power and performance.',
     },
     {
       id: 2,
-      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2070',
-      title: 'Empowering Communities',
-      subtitle: 'Driving progress and prosperity in every sector we operate.',
+      imageDesktop: tvsRaider,
+      imageMobile: tvsRaider,
+      title: 'TVS Raider',
+      subtitle: 'The wicked ride for the new generation.',
     },
     {
       id: 3,
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2015',
-      title: 'Global Excellence',
-      subtitle: 'Setting benchmarks in quality and performance worldwide.',
+      imageDesktop: marutiArena,
+      imageMobile: marutiArena,
+      title: 'Maruti Suzuki Arena',
+      subtitle: 'Experience the joy of mobility.',
     },
     {
       id: 4,
-      image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=2070',
-      title: 'Sustainable Innovation',
-      subtitle: 'Pioneering eco-friendly solutions for a greener tomorrow.',
+      imageDesktop: marutiCommercial,
+      imageMobile: marutiCommercial,
+      title: 'Maruti Suzuki Commercial',
+      subtitle: 'Partnering in your business growth.',
     },
     {
       id: 5,
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2070',
-      title: 'Manufacturing Prowess',
-      subtitle: 'State-of-the-art facilities delivering world-class products.',
+      imageDesktop: goodyear,
+      imageMobile: goodyear,
+      title: 'Goodyear Tyres',
+      subtitle: 'Superior grip and safety for every road.',
     },
     {
       id: 6,
-      image: 'https://images.unsplash.com/photo-1472289065668-ce650ac443b2?auto=format&fit=crop&q=80&w=2070',
-      title: 'Future Ready',
-      subtitle: 'Embracing technology to shape the next generation of business.',
+      imageDesktop: manufacturing,
+      imageMobile: manufacturing,
+      title: 'Manufacturing Unit',
+      subtitle: 'Excellence in production and quality.',
     },
+    // {
+    //   id: 7,
+    //   imageDesktop: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=2070', // Agro/Harvester placeholder
+    //   imageMobile: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=800',
+    //   title: 'Shaktiman Agro',
+    //   subtitle: 'Empowering agriculture with modern technology.',
+    // },
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 5000); // Faster rotation for more slides
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -70,15 +89,22 @@ const Hero = () => {
           transition={{ duration: 0.7 }}
           className="absolute inset-0"
         >
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105 transition-transform duration-[10000ms] hover:scale-110"
-            style={{ backgroundImage: `url(${slides[currentSlide].image})` }}
-          >
+          {/* Responsive Image Background */}
+          <div className="absolute inset-0">
+            <picture>
+              <source media="(max-width: 768px)" srcSet={slides[currentSlide].imageMobile} />
+              <source media="(min-width: 769px)" srcSet={slides[currentSlide].imageDesktop} />
+              <img
+                src={slides[currentSlide].imageDesktop}
+                alt={slides[currentSlide].title}
+                className="w-full h-full object-cover transform scale-105 transition-transform duration-[10000ms] hover:scale-110"
+              />
+            </picture>
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
           </div>
 
           <div className="absolute inset-0 flex items-center">
-            <div className="container mx-auto px-4 md:px-8 text-white">
+            <div className="container mx-auto px-4 md:px-8 text-white relative z-10">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
