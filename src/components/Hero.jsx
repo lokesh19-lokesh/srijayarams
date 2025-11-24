@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import tractorDesktop from "../assets/s11.webp";
-import tvsRaider from "../assets/s22.jpg";
+import tvsRaider from "../assets/S22.jpg";
 import marutiArena from "../assets/ss3.jpg";
 import marutiCommercial from "../assets/ss4.avif";
 import goodyear from "../assets/s55.jpg";
