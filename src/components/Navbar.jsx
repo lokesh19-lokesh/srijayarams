@@ -110,7 +110,7 @@ const Navbar = () => {
             </div>
           ))}
           <button className="bg-primary text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors">
-            Gets in Touch
+            Get in Touch
           </button>
         </div>
 
