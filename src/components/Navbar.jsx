@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src="assets/logo.png" alt="Sri Jayarama Group" className="h-16 w-auto" />
+          <img src="/src/assets/logo.png" alt="Sri Jayarama Group" className="h-16 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -109,7 +109,7 @@ const Navbar = () => {
             </div>
           ))}
           <button className="bg-primary text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors">
-            Get in Touch
+            Gets in Touch
           </button>
         </div>
 
