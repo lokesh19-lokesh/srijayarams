@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { navLinks } from '../data/mockData';
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +32,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src="/src/assets/logo.png" alt="Sri Jayarama Group" className="h-16 w-auto" />
+          <img src={logo} alt="Sri Jayarama Group" className="h-16 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
