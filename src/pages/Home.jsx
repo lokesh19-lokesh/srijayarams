@@ -6,6 +6,7 @@ import Card from '../components/Card';
 import Button from '../components/Button';
 import { stories, verticals } from '../data/mockData';
 import { ArrowRight } from 'lucide-react';
+import bg from '../assets/hf.avif';
 
 // Import Background Image
 import backImg from '../assets/back.jpg';
@@ -33,20 +34,20 @@ import tvs from '../assets/brands/tvs.png';
 
 // Import Sector Images
 import sectorExide from '../assets/homebrandsecto/exide.jpeg';
-import sectorGoodyear from '../assets/homebrandsecto/goodyear_tyre.jpg';
-import sectorMahindraConstruction from '../assets/homebrandsecto/mahindra _construction_equipment.jpg';
-import sectorMahindraXChange from '../assets/homebrandsecto/mahindra_tractor_x_change.jpg';
+import sectorGoodyear from '../assets/homebrandsecto/goodyear_tyre.png';
+import sectorMahindraConstruction from '../assets/homebrandsecto/mahindra _construction_equipment.png';
+import sectorMahindraXChange from '../assets/homebrandsecto/mahindra_tractor_x_change.png';
 import sectorMahindraTractors from '../assets/homebrandsecto/mahindra_tractors1.webp';
-import sectorManufacturing from '../assets/homebrandsecto/manufacturing_unit.jpeg';
-import sectorMarutiArena from '../assets/homebrandsecto/maruti_suzuki_arena.webp';
-import sectorMarutiCommercial from '../assets/homebrandsecto/maruti_suzuki_commercial.webp';
-import sectorMarutiNexa from '../assets/homebrandsecto/maruti_suzuki_nexa.webp';
-import sectorMarutiTrueValue from '../assets/homebrandsecto/maruti_suzuki_true_value.jpg';
-import sectorRoots from '../assets/homebrandsecto/root_adding_values.jpeg';
-import sectorShaktiman from '../assets/homebrandsecto/shaktiman_agro.jpeg';
-import sectorSriRama from '../assets/homebrandsecto/sir_rama_landmark.jpeg';
-import sectorTotalEnergies from '../assets/homebrandsecto/total_energies.avif';
-import sectorTvs from '../assets/homebrandsecto/tvs_motors.webp';
+import sectorManufacturing from '../assets/homebrandsecto/manufacturing_unit.png';
+import sectorMarutiArena from '../assets/homebrandsecto/maruti_suzuki_arena.png';
+import sectorMarutiCommercial from '../assets/homebrandsecto/maruti_suzuki_commercial.png';
+import sectorMarutiNexa from '../assets/homebrandsecto/maruti_suzuki_nexa.png';
+import sectorMarutiTrueValue from '../assets/homebrandsecto/maruti_suzuki_true_value.png';
+import sectorRoots from '../assets/homebrandsecto/root_adding_values.png';
+import sectorShaktiman from '../assets/homebrandsecto/shaktiman_agro.png';
+import sectorSriRama from '../assets/homebrandsecto/sir_rama_landmark.png';
+import sectorTotalEnergies from '../assets/homebrandsecto/total_energies.png';
+import sectorTvs from '../assets/homebrandsecto/tvs_motors.png';
 
 const brandLogos = [
   { src: commercial, alt: 'Commercial' },
@@ -342,7 +343,7 @@ const Home = () => {
       <div className="relative h-[600px] w-full overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=2000"
+            src={bg}
             alt="Community"
             className="w-full h-full object-cover"
           />
