@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
@@ -54,8 +54,29 @@ const brandLogos = [
 ];
 
 const Home = () => {
-  // Show only first 4 verticals on home page
-  const featuredVerticals = verticals.slice(0, 4);
+  const [showAllSectors, setShowAllSectors] = useState(false);
+
+  // Show first 4 or all verticals based on state
+  const displayedVerticals = showAllSectors ? verticals : verticals.slice(0, 4);
+
+  // Map IDs to imported images
+  const sectorImages = {
+    'mahindra-tractors': mahindraTractors,
+    'mahindra-construction-equipment': mahindraConstruction,
+    'mahindra-tractor-x-change': tractorbaazi,
+    'maruti-suzuki-arena': marutiArena,
+    'maruti-suzuki-nexa': nexa,
+    'maruti-suzuki-true-value': trueValue,
+    'maruti-suzuki-commercial': commercial,
+    'tvs-motor': tvs,
+    'total-energies': totalEnergies,
+    'shaktiman-agro': sakthiman,
+    'goodyear-tyres': goodYear,
+    'roots': roots,
+    'exide': exide,
+    'manufacturing-unit': jayaramaTrailor,
+    'sri-rama-landmark': jayaramaLandmark,
+  };
 
   return (
     <>
@@ -124,24 +145,69 @@ const Home = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Business Sectors</h2>
             <p className="text-gray-400 text-lg">Driving growth across diverse industries</p>
           </div>
-          <Button to="/verticals" variant="outline" className="hidden md:inline-flex border-gray-600 text-white hover:bg-white hover:text-black">View All Sectors</Button>
+          <Button
+            onClick={() => setShowAllSectors(!showAllSectors)}
+            variant="outline"
+            className="hidden md:inline-flex border-gray-600 text-white hover:bg-white hover:text-black"
+          >
+            {showAllSectors ? 'View Less Sectors' : 'View All Sectors'}
+          </Button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
-          {featuredVerticals.map((vertical) => (
-            <Card
-              key={vertical.id}
-              title={vertical.title}
-              description={vertical.description}
-              image={vertical.image}
-              link={vertical.link}
-              external={vertical.external}
-              className="h-full"
-            />
-          ))}
+          {displayedVerticals.map((vertical) => {
+            const isExternal = vertical.external || (vertical.link && vertical.link.startsWith('http'));
+            const displayImage = sectorImages[vertical.id] || vertical.image;
+
+            const CardContent = () => (
+              <div className="relative h-[350px] rounded-2xl overflow-hidden group cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
+                {/* Background Image */}
+                <img
+                  src={displayImage}
+                  alt={vertical.title}
+                  className="absolute inset-0 w-full h-full object-contain bg-white transform group-hover:scale-110 transition-transform duration-700"
+                />
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
+
+                {/* Content */}
+                <div className="absolute bottom-0 left-0 w-full p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <div className="mb-2 w-12 h-1 bg-blue-500 rounded-full mb-4" />
+                  <h3 className="text-xl font-bold text-white mb-2 leading-tight group-hover:text-blue-400 transition-colors">
+                    {vertical.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm line-clamp-2 group-hover:line-clamp-none group-hover:text-white transition-all duration-300">
+                    {vertical.description}
+                  </p>
+
+                  {/* Arrow Icon */}
+                  <div className="mt-4 flex items-center text-blue-400 text-sm font-semibold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-100">
+                    Explore <ArrowRight size={16} className="ml-2" />
+                  </div>
+                </div>
+              </div>
+            );
+
+            return isExternal ? (
+              <a key={vertical.id} href={vertical.link} target="_blank" rel="noopener noreferrer" className="block h-full">
+                <CardContent />
+              </a>
+            ) : (
+              <Link key={vertical.id} to={vertical.link} className="block h-full">
+                <CardContent />
+              </Link>
+            );
+          })}
         </div>
         <div className="mt-12 text-center md:hidden">
-          <Button to="/verticals" variant="outline" className="border-gray-600 text-white hover:bg-white hover:text-black">View All Sectors</Button>
+          <Button
+            onClick={() => setShowAllSectors(!showAllSectors)}
+            variant="outline"
+            className="border-gray-600 text-white hover:bg-white hover:text-black"
+          >
+            {showAllSectors ? 'View Less Sectors' : 'View All Sectors'}
+          </Button>
         </div>
       </Section>
 

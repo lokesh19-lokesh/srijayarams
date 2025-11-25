@@ -36,7 +36,7 @@ export const verticals = [
     description: 'Empowering farmers with tough and reliable tractors for every agricultural need.',
     icon: Truck,
     image: 'https://images.unsplash.com/photo-1592860986145-66255f053a59?auto=format&fit=crop&q=80&w=800',
-    link: 'https://www.mahindra.com/farm-equipment',
+    link: 'https://www.mahindratractor.com/',
     external: true
   },
   {
@@ -54,7 +54,7 @@ export const verticals = [
     description: 'Trusted platform for buying and selling used tractors.',
     icon: TrendingUp,
     image: 'https://images.unsplash.com/photo-1530267981375-f0de93cdf538?auto=format&fit=crop&q=80&w=800',
-    link: 'https://www.mahindra.com/farm-equipment',
+    link: 'https://www.x-changetractor.com/',
     external: true
   },
   {
@@ -63,7 +63,7 @@ export const verticals = [
     description: 'Experience the joy of mobility with our wide range of passenger vehicles.',
     icon: Globe,
     image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800',
-    link: 'https://www.marutisuzuki.com',
+    link: 'https://www.arenaofmahbubnagar.com/',
     external: true
   },
   {
@@ -72,7 +72,7 @@ export const verticals = [
     description: 'Creating inspiring experiences for the global consumer.',
     icon: Award,
     image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800',
-    link: 'https://www.nexaexperience.com',
+    link: 'https://www.nexaofbhoothpurroad.com/',
     external: true
   },
   {
@@ -81,7 +81,7 @@ export const verticals = [
     description: 'India’s most trusted destination for pre-owned cars.',
     icon: TrendingUp,
     image: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=800',
-    link: 'https://www.marutisuzukitruevalue.com',
+    link: 'https://www.marutisuzukitruevalue.com/used-cars-in-mahbubnagar',
     external: true
   },
   {
@@ -90,7 +90,7 @@ export const verticals = [
     description: 'Partnering in your progress with our commercial vehicle range.',
     icon: Truck,
     image: 'https://images.unsplash.com/photo-1605218427360-facb4c3d843c?auto=format&fit=crop&q=80&w=800',
-    link: 'https://commercial.marutisuzuki.com',
+    link: 'https://www.commercialofyenugonda.com/',
     external: true
   },
   {
@@ -108,7 +108,7 @@ export const verticals = [
     description: 'Providing high-quality lubricants and energy solutions.',
     icon: Leaf,
     image: 'https://images.unsplash.com/photo-1516937941348-c09e5542945c?auto=format&fit=crop&q=80&w=800',
-    link: 'https://totalenergies.in',
+    link: 'https://totalenergies.com',
     external: true
   },
   {
@@ -135,7 +135,7 @@ export const verticals = [
     description: 'Cleaning solutions for a cleaner world.',
     icon: Leaf,
     image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800',
-    link: 'https://www.rootsmulticlean.com',
+    link: 'https://www.rootsindia.com/',
     external: true
   },
   {
@@ -153,8 +153,8 @@ export const verticals = [
     description: 'Own manufacturing of Tractor trailers and Agriculture implements.',
     icon: Wrench,
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800',
-    link: '/verticals/manufacturing-unit',
-    external: false
+    link: 'https://manufacturing.srijayarama.com/',
+    external: true
   },
   {
     id: 'sri-rama-landmark',
@@ -162,8 +162,8 @@ export const verticals = [
     description: 'Developing gated communities and apartments for modern living.',
     icon: Home,
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
-    link: '/verticals/sri-rama-landmark',
-    external: false
+    link: 'https://sriramalandmark.com/',
+    external: true
   },
 ];
 

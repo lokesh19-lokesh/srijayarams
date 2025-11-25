@@ -41,8 +41,7 @@ const Navbar = () => {
             <div key={link.name} className="relative group">
               {link.dropdown ? (
                 <button
-                  className={`flex items-center text-base font-bold transition-colors hover:text-primary ${scrolled ? 'text-gray-700' : 'text-white'
-                    }`}
+                  className="flex items-center text-base font-bold transition-colors hover:text-primary text-white"
                 >
                   {link.name} <ChevronDown size={16} className="ml-1" />
                 </button>
@@ -114,7 +113,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className={`md:hidden focus:outline-none ${scrolled ? 'text-gray-700' : 'text-white'}`}
+          className="md:hidden focus:outline-none text-white"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
