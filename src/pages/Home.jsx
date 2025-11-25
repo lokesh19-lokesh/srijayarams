@@ -354,7 +354,7 @@ const Home = () => {
             <p className="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed max-w-2xl mx-auto">
               We believe in giving back to the society that has supported us for decades. Our initiatives in health, education, and environment reflect our core values.
             </p>
-            <Button to="/sustainability" variant="primary" className="bg-white text-black hover:bg-blue-600 hover:text-white border-none">
+            <Button to="/sustainability" variant="primary" className="bg-black text-black hover:bg-blue-600 hover:text-white border-none">
               Explore Our Initiatives
             </Button>
           </div>
