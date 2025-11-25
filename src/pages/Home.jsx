@@ -17,13 +17,15 @@ const Home = () => {
 
       {/* Introduction Section - Clean & Minimal */}
       <Section className="py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white tracking-tight">
-            Sri Jayarama Group
-          </h2>
-          <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-light">
-            A legacy of trust and excellence since 1974. From humble beginnings in Mahabubnagar to a diversified conglomerate empowering lives across Telangana.
-          </p>
+        <div className="max-w-3xl mx-auto mb-16 p-6 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg shadow-[0_0_20px_rgba(255,255,255,0.1)] animate-thunder">
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              Sri Jayarama Group
+            </h2>
+            <p className="text-gray-300 text-lg leading-relaxed">
+              A legacy of trust and excellence since 1974. From humble beginnings in Mahabubnagar to a diversified conglomerate empowering lives across Telangana.
+            </p>
+          </div>
         </div>
       </Section>
 
