@@ -177,26 +177,45 @@ export const leadership = [
   },
 ];
 
-export const news = [
+import s1 from '../assets/s1.jpg';
+import mahindraTractor from '../assets/mahindra_tractor.jpg';
+import s55 from '../assets/s55.jpg';
+
+export const stories = [
   {
     id: 1,
-    title: 'New Showroom Opening in Mahabubnagar',
-    date: 'October 24, 2023',
-    category: 'Expansion',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=800',
+    type: 'statement',
+    title: 'Formation of the Sri Jayarama Memorial and Welfare Trust',
+    content: 'The Sri Jayarama Group has pledged to contribute significantly to community welfare through the newly formed trust, focusing on health and education.',
+    image: s1,
+    category: 'STATEMENT',
+    link: '#'
   },
   {
     id: 2,
-    title: 'Award for Best Dealership 2023',
-    date: 'November 12, 2023',
-    category: 'Awards',
-    image: 'https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&q=80&w=800',
+    type: 'fact',
+    title: 'Did you know',
+    content: 'Sri Jayarama Group started with a single tractor dealership in 1974 and has now expanded to over 15 verticals across Telangana.',
+    highlight: '50+ Years of Excellence',
+    category: 'FACTS',
+    theme: 'blue'
   },
   {
     id: 3,
-    title: 'Community Health Camp Initiative',
-    date: 'December 05, 2023',
-    category: 'CSR',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800',
+    type: 'social-post',
+    platform: 'facebook',
+    content: "Whether it's over open seas or deep below the city, #SriJayaramaGroup turns tough terrain into engineering breakthroughs.",
+    image: mahindraTractor,
+    date: 'a day ago',
+    link: '#'
   },
+  {
+    id: 4,
+    type: 'social-post',
+    platform: 'instagram',
+    content: "Excellence at work. As above, so below. Celebrating our team's dedication to building a better future.",
+    image: s55,
+    date: 'a day ago',
+    link: '#'
+  }
 ];

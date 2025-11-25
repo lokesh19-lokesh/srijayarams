@@ -4,7 +4,7 @@ import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Card from '../components/Card';
 import Button from '../components/Button';
-import { news, verticals } from '../data/mockData';
+import { stories, verticals } from '../data/mockData';
 import { ArrowRight } from 'lucide-react';
 
 // Import Background Image
@@ -228,36 +228,113 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* Stories / Media Section */}
-      <Section className="py-24">
-        <div className="flex justify-between items-end mb-16 px-4">
+      {/* Stories / Media Section - Bento Grid Layout */}
+      <Section className="py-24 bg-[#121212]">
+        <div className="flex justify-between items-end mb-12 px-4">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Stories</h2>
-            <p className="text-gray-400 text-lg">Latest updates and milestones</p>
+            <span className="bg-white/10 text-white px-3 py-1 rounded text-sm font-medium mb-4 inline-block">In the News</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Stories & Updates</h2>
           </div>
           <Link to="#" className="hidden md:flex items-center text-blue-400 font-semibold hover:translate-x-2 transition-transform">
             View Archives <ArrowRight size={20} className="ml-2" />
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-          {news.map((item) => (
-            <div key={item.id} className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-lg aspect-[4/3] mb-6">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              <div className="space-y-3">
-                <span className="text-blue-400 font-medium text-sm tracking-wider uppercase">{item.category}</span>
-                <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors leading-snug">
-                  {item.title}
-                </h3>
-                <p className="text-gray-500 text-sm">{item.date}</p>
-              </div>
-            </div>
-          ))}
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+          {stories.map((story) => {
+            // Card 1: Statement (Large, Image Left, Text Right)
+            if (story.type === 'statement') {
+              return (
+                <div key={story.id} className="col-span-1 md:col-span-2 bg-[#1E1E1E] rounded-none overflow-hidden flex flex-col md:flex-row min-h-[400px]">
+                  <div className="w-full md:w-1/2 relative h-64 md:h-auto">
+                    <img src={story.image} alt={story.title} className="absolute inset-0 w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-blue-500/20 mix-blend-overlay" />
+                  </div>
+                  <div className="w-full md:w-1/2 p-8 flex flex-col justify-center relative">
+                    <div className="absolute top-0 left-0 w-0 h-0 border-t-[20px] border-t-transparent border-l-[20px] border-l-[#1E1E1E] md:border-l-transparent md:border-t-[#1E1E1E] transform -translate-x-1/2 md:translate-x-0 md:-translate-y-1/2" />
+                    <span className="text-blue-400 text-xs font-bold tracking-widest uppercase mb-6">{story.category}</span>
+                    <h3 className="text-2xl font-bold text-white mb-6 leading-tight">{story.title}</h3>
+                    <div className="border-l-2 border-yellow-500 pl-6 mb-8">
+                      <p className="text-gray-300 text-sm leading-relaxed">{story.content}</p>
+                    </div>
+                    <div className="mt-auto flex justify-end">
+                      <ArrowRight className="text-gray-500 hover:text-white transition-colors cursor-pointer" />
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
+            // Card 2: Fact (Solid Blue)
+            if (story.type === 'fact') {
+              return (
+                <div key={story.id} className="col-span-1 bg-[#0099FF] p-8 flex flex-col justify-between min-h-[400px]">
+                  <div>
+                    <span className="text-white/80 text-xs font-bold tracking-widest uppercase mb-8 block">{story.category}</span>
+                    <h3 className="text-2xl font-bold text-white mb-6">{story.title}</h3>
+                    <div className="border-l-2 border-yellow-400 pl-4">
+                      <p className="text-white text-sm leading-relaxed mb-4">{story.content}</p>
+                      <p className="text-white font-bold italic text-xs">{story.highlight}</p>
+                    </div>
+                  </div>
+                  <div className="flex justify-center mt-8">
+                    <div className="w-8 h-8 rounded-full border-2 border-white/30 border-t-white animate-spin" />
+                  </div>
+                </div>
+              );
+            }
+
+            // Card 3: Social Post (Facebook style)
+            if (story.type === 'social-post' && story.platform === 'facebook') {
+              return (
+                <div key={story.id} className="col-span-1 relative group overflow-hidden min-h-[300px] bg-gray-800">
+                  <img src={story.image} alt="Social" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
+                  <div className="absolute top-6 left-6">
+                    <span className="text-white text-2xl font-bold">f</span>
+                  </div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="border-l-2 border-white pl-4">
+                      <p className="text-white text-sm leading-relaxed line-clamp-4 mb-2">{story.content}</p>
+                      <span className="text-gray-400 text-xs italic">{story.date}</span>
+                    </div>
+                  </div>
+                  <ArrowRight className="absolute bottom-6 right-6 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
+              );
+            }
+
+            // Card 4: Social Post (Instagram style - Wide)
+            if (story.type === 'social-post' && story.platform === 'instagram') {
+              return (
+                <div key={story.id} className="col-span-1 md:col-span-2 relative group overflow-hidden min-h-[300px] bg-gradient-to-r from-orange-500 to-purple-600">
+                  <img src={story.image} alt="Social" className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/80 to-purple-600/80 mix-blend-multiply" />
+
+                  <div className="absolute top-6 left-6">
+                    <span className="text-white text-2xl">📷</span>
+                  </div>
+                  <div className="absolute top-6 right-6">
+                    <span className="text-white/80 font-bold tracking-widest">SRI JAYARAMA</span>
+                  </div>
+
+                  <div className="absolute inset-0 flex items-center justify-center p-12">
+                    <div className="max-w-lg">
+                      <div className="border-l-2 border-white pl-6">
+                        <p className="text-white text-lg font-medium leading-relaxed mb-4">{story.content}</p>
+                        <span className="text-white/70 text-sm italic">{story.date}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="absolute bottom-6 right-6 text-white/50 text-4xl font-serif italic opacity-20">
+                    EXCELLENCE AT WORK
+                  </div>
+                </div>
+              );
+            }
+            return null;
+          })}
         </div>
       </Section>
 
