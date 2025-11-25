@@ -7,21 +7,21 @@ export const navLinks = [
     name: 'Our Verticals',
     path: '/verticals',
     dropdown: [
-      { name: 'Mahindra Tractors', path: 'https://www.mahindra.com/farm-equipment', external: true },
+      { name: 'Mahindra Tractors', path: 'https://www.mahindratractor.com/', external: true },
       { name: 'Mahindra Construction Equipment', path: 'https://www.mahindraconstructionequipment.com', external: true },
-      { name: 'Mahindra Tractor X-Change', path: 'https://www.mahindra.com/farm-equipment', external: true }, // Using main farm equipment site as fallback
-      { name: 'Maruti Suzuki Arena', path: 'https://www.marutisuzuki.com', external: true },
-      { name: 'Maruti Suzuki Nexa', path: 'https://www.nexaexperience.com', external: true },
-      { name: 'Maruti Suzuki True Value', path: 'https://www.marutisuzukitruevalue.com', external: true },
-      { name: 'Maruti Suzuki Commercial', path: 'https://commercial.marutisuzuki.com', external: true },
+      { name: 'Mahindra Tractor X-Change', path: 'https://www.x-changetractor.com/', external: true }, // Using main farm equipment site as fallback
+      { name: 'Maruti Suzuki Arena', path: 'https://www.arenaofmahbubnagar.com/', external: true },
+      { name: 'Maruti Suzuki Nexa', path: 'https://www.nexaofbhoothpurroad.com/', external: true },
+      { name: 'Maruti Suzuki True Value', path: 'https://www.marutisuzukitruevalue.com/used-cars-in-mahbubnagar', external: true },
+      { name: 'Maruti Suzuki Commercial', path: 'https://www.commercialofyenugonda.com/', external: true },
       { name: 'TVS Motor', path: 'https://www.tvsmotor.com', external: true },
-      { name: 'Total Energies', path: 'https://totalenergies.in', external: true },
+      { name: 'Total Energies', path: 'https://totalenergies.com', external: true },
       { name: 'Shaktiman Agro', path: 'https://www.shaktimanagro.com', external: true },
       { name: 'Goodyear Tyres', path: 'https://www.goodyear.co.in', external: true },
-      { name: 'Roots', path: 'https://www.rootsmulticlean.com', external: true },
+      { name: 'Roots', path: 'https://www.rootsindia.com/', external: true },
       { name: 'EXIDE', path: 'https://www.exideindustries.com', external: true },
-      { name: 'Manufacturing Unit', path: '/verticals/manufacturing-unit', external: false }, // Keeping internal
-      { name: 'Sri Rama Landmark', path: '/verticals/sri-rama-landmark', external: false }, // Keeping internal
+      { name: 'Manufacturing Unit', path: 'https://manufacturing.srijayarama.com/', external: true }, // Keeping internal
+      { name: 'Sri Rama Landmark', path: 'https://sriramalandmark.com/', external: true }, // Keeping internal
     ]
   },
   { name: 'Sustainability', path: '/sustainability' },
