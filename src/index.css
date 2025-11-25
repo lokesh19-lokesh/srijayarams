@@ -74,6 +74,36 @@ h6 {
   animation: marquee 30s linear infinite;
 }
 
-.animate-marquee:hover {
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 25s linear infinite;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+
+.animate-marquee:hover,
+.animate-marquee-reverse:hover,
+.animate-ticker:hover {
   animation-play-state: paused;
 }
