@@ -84,7 +84,7 @@ const Navbar = () => {
                                   className="group/item flex items-center text-sm text-gray-300 hover:text-white transition-colors py-1"
                                 >
                                   <span className="w-1.5 h-1.5 rounded-full bg-primary mr-3 opacity-0 group-hover/item:opacity-100 transition-opacity"></span>
-                                  {item.name}
+                                  Jayarama {item.name}
                                 </a>
                               ) : (
                                 <Link
@@ -93,7 +93,7 @@ const Navbar = () => {
                                   className="group/item flex items-center text-sm text-gray-300 hover:text-white transition-colors py-1"
                                 >
                                   <span className="w-1.5 h-1.5 rounded-full bg-primary mr-3 opacity-0 group-hover/item:opacity-100 transition-opacity"></span>
-                                  {item.name}
+                                  Jayarama {item.name}
                                 </Link>
                               )
                             ))}
@@ -144,7 +144,7 @@ const Navbar = () => {
                             rel="noopener noreferrer"
                             className="block text-sm text-gray-600 hover:text-primary"
                           >
-                            {item.name}
+                            Jayarama {item.name}
                           </a>
                         ) : (
                           <Link
@@ -152,7 +152,7 @@ const Navbar = () => {
                             to={item.path}
                             className="block text-sm text-gray-600 hover:text-primary"
                           >
-                            {item.name}
+                            Jayarama {item.name}
                           </Link>
                         )
                       ))}

@@ -83,11 +83,11 @@ const Footer = () => {
                       rel="noopener noreferrer"
                       className="hover:text-white transition-colors block"
                     >
-                      {item.name}
+                      Jayarama {item.name}
                     </a>
                   ) : (
                     <Link to={item.path} className="hover:text-white transition-colors block">
-                      {item.name}
+                      Jayarama {item.name}
                     </Link>
                   )}
                 </li>
