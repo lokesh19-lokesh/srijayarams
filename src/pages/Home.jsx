@@ -29,6 +29,52 @@ const Home = () => {
         </div>
       </Section>
 
+      {/* Our Brands Slider */}
+      <Section className="py-12 bg-[#1a1a1a]/50 overflow-hidden">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Our Brands</h2>
+          <p className="text-gray-400">Trusted partners in our journey of excellence</p>
+        </div>
+
+        <div className="relative w-full overflow-hidden">
+          <div className="flex w-fit animate-marquee hover:pause">
+            {[0, 1].map((i) => (
+              <div key={i} className="flex items-center gap-12 px-6">
+                {[
+                  'commercial.png',
+                  'exide.png',
+                  'good-year.png',
+                  'mahindra-contruction-equipment.png',
+                  'mahindra-tractors.png',
+                  'maruti-suzuki-arena.png',
+                  'maruti-suzuki-caring.png',
+                  'maruti-suzuki-driving-school.png',
+                  'maruti-suzuki-genuine-accessories.png',
+                  'maruti-suzuki-insurance-broking.png',
+                  'nexa.png',
+                  'roots-adding-value.png',
+                  'sakthiman.png',
+                  'sri-jayarama-landmark.png',
+                  'sri-jayarama-trailor-agri.png',
+                  'totalenergies.png',
+                  'tractorbaazi.png',
+                  'true-value.png',
+                  'tvs.png'
+                ].map((logo, index) => (
+                  <div key={index} className="w-32 h-20 bg-white rounded-lg p-2 flex items-center justify-center flex-shrink-0">
+                    <img
+                      src={`/src/assets/brands/${logo}`}
+                      alt={logo.replace('.png', '').replace(/-/g, ' ')}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       {/* Business Sectors - Grid Layout */}
       <Section className="py-24">
         <div className="flex justify-between items-end mb-16 px-4">
@@ -38,7 +84,6 @@ const Home = () => {
           </div>
           <Button to="/verticals" variant="outline" className="hidden md:inline-flex border-gray-600 text-white hover:bg-white hover:text-black">View All Sectors</Button>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
           {featuredVerticals.map((vertical) => (
             <Card
