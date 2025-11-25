@@ -7,6 +7,52 @@ import Button from '../components/Button';
 import { news, verticals } from '../data/mockData';
 import { ArrowRight } from 'lucide-react';
 
+// Import Background Image
+import backImg from '../assets/back.jpg';
+
+// Import Brand Logos
+import commercial from '../assets/brands/commercial.png';
+import exide from '../assets/brands/exide.png';
+import goodYear from '../assets/brands/good-year.png';
+import mahindraConstruction from '../assets/brands/mahindra-contruction-equipment.png';
+import mahindraTractors from '../assets/brands/mahindra-tractors.png';
+import marutiArena from '../assets/brands/maruti-suzuki-arena.png';
+import marutiCaring from '../assets/brands/maruti-suzuki-caring.png';
+import marutiDriving from '../assets/brands/maruti-suzuki-driving-school.png';
+import marutiAccessories from '../assets/brands/maruti-suzuki-genuine-accessories.png';
+import marutiInsurance from '../assets/brands/maruti-suzuki-insurance-broking.png';
+import nexa from '../assets/brands/nexa.png';
+import roots from '../assets/brands/roots-adding-value.png';
+import sakthiman from '../assets/brands/sakthiman.png';
+import jayaramaLandmark from '../assets/brands/sri-jayarama-landmark.png';
+import jayaramaTrailor from '../assets/brands/sri-jayarama-trailor-agri.png';
+import totalEnergies from '../assets/brands/totalenergies.png';
+import tractorbaazi from '../assets/brands/tractorbaazi.png';
+import trueValue from '../assets/brands/true-value.png';
+import tvs from '../assets/brands/tvs.png';
+
+const brandLogos = [
+  { src: commercial, alt: 'Commercial' },
+  { src: exide, alt: 'Exide' },
+  { src: goodYear, alt: 'Good Year' },
+  { src: mahindraConstruction, alt: 'Mahindra Construction' },
+  { src: mahindraTractors, alt: 'Mahindra Tractors' },
+  { src: marutiArena, alt: 'Maruti Suzuki Arena' },
+  { src: marutiCaring, alt: 'Maruti Suzuki Caring' },
+  { src: marutiDriving, alt: 'Maruti Driving School' },
+  { src: marutiAccessories, alt: 'Maruti Genuine Accessories' },
+  { src: marutiInsurance, alt: 'Maruti Insurance' },
+  { src: nexa, alt: 'Nexa' },
+  { src: roots, alt: 'Roots' },
+  { src: sakthiman, alt: 'Sakthiman' },
+  { src: jayaramaLandmark, alt: 'Sri Jayarama Landmark' },
+  { src: jayaramaTrailor, alt: 'Sri Jayarama Trailor' },
+  { src: totalEnergies, alt: 'Total Energies' },
+  { src: tractorbaazi, alt: 'Tractorbaazi' },
+  { src: trueValue, alt: 'True Value' },
+  { src: tvs, alt: 'TVS' },
+];
+
 const Home = () => {
   // Show only first 4 verticals on home page
   const featuredVerticals = verticals.slice(0, 4);
@@ -15,65 +61,52 @@ const Home = () => {
     <>
       <Hero />
 
-      {/* Introduction Section - Clean & Minimal */}
-      <Section className="py-20">
-        <div className="max-w-3xl mx-auto mb-16 p-6 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg shadow-[0_0_20px_rgba(255,255,255,0.1)] animate-thunder">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-              Sri Jayarama Group
-            </h2>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              A legacy of trust and excellence since 1974. From humble beginnings in Mahabubnagar to a diversified conglomerate empowering lives across Telangana.
-            </p>
-          </div>
-        </div>
-      </Section>
-
-      {/* Our Brands Slider */}
-      <Section className="py-12 bg-[#1a1a1a]/50 overflow-hidden">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Our Brands</h2>
-          <p className="text-gray-400">Trusted partners in our journey of excellence</p>
+      {/* Combined Introduction and Brands Section */}
+      <div className="relative py-20 mt-20 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img src={backImg} alt="Background" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/80" /> {/* Dark overlay for readability */}
         </div>
 
-        <div className="relative w-full overflow-hidden">
-          <div className="flex w-fit animate-marquee hover:pause">
-            {[0, 1].map((i) => (
-              <div key={i} className="flex items-center gap-12 px-6">
-                {[
-                  'commercial.png',
-                  'exide.png',
-                  'good-year.png',
-                  'mahindra-contruction-equipment.png',
-                  'mahindra-tractors.png',
-                  'maruti-suzuki-arena.png',
-                  'maruti-suzuki-caring.png',
-                  'maruti-suzuki-driving-school.png',
-                  'maruti-suzuki-genuine-accessories.png',
-                  'maruti-suzuki-insurance-broking.png',
-                  'nexa.png',
-                  'roots-adding-value.png',
-                  'sakthiman.png',
-                  'sri-jayarama-landmark.png',
-                  'sri-jayarama-trailor-agri.png',
-                  'totalenergies.png',
-                  'tractorbaazi.png',
-                  'true-value.png',
-                  'tvs.png'
-                ].map((logo, index) => (
-                  <div key={index} className="w-32 h-20 bg-white rounded-lg p-2 flex items-center justify-center flex-shrink-0">
-                    <img
-                      src={`/src/assets/brands/${logo}`}
-                      alt={logo.replace('.png', '').replace(/-/g, ' ')}
-                      className="max-w-full max-h-full object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
-            ))}
+        <div className="relative z-10 container mx-auto px-4">
+          {/* Introduction Box */}
+          <div className="max-w-3xl mx-auto mb-16 p-6 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg shadow-[0_0_20px_rgba(255,255,255,0.1)] animate-thunder">
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                Sri Jayarama Group
+              </h2>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                A legacy of trust and excellence since 1974. From humble beginnings in Mahabubnagar to a diversified conglomerate empowering lives across Telangana.
+              </p>
+            </div>
+          </div>
+
+          {/* Our Brands Slider */}
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Our Brands</h2>
+            <p className="text-gray-400">Trusted partners in our journey of excellence</p>
+          </div>
+
+          <div className="relative w-full overflow-hidden">
+            <div className="flex w-fit animate-marquee hover:pause">
+              {[0, 1].map((i) => (
+                <div key={i} className="flex items-center gap-12 px-6">
+                  {brandLogos.map((brand, index) => (
+                    <div key={index} className="w-32 h-20 bg-white rounded-lg p-2 flex items-center justify-center flex-shrink-0">
+                      <img
+                        src={brand.src}
+                        alt={brand.alt}
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </Section>
+      </div>
 
       {/* Business Sectors - Grid Layout */}
       <Section className="py-24">
@@ -84,6 +117,7 @@ const Home = () => {
           </div>
           <Button to="/verticals" variant="outline" className="hidden md:inline-flex border-gray-600 text-white hover:bg-white hover:text-black">View All Sectors</Button>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
           {featuredVerticals.map((vertical) => (
             <Card
