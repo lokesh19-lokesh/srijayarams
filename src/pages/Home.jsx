@@ -13,47 +13,31 @@ const Home = () => {
 
   return (
     <>
-      <Hero
-        title="Sri Rama Jayarama Group"
-        subtitle="A Collective Force for Progress"
-        image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000"
-      >
-        <div className="flex flex-wrap gap-4">
-          <Button to="/about" variant="primary">Read Our Story</Button>
-          <Button to="/verticals" variant="outline">Our Verticals</Button>
-        </div>
-      </Hero>
+      <Hero />
 
-      {/* Introduction Section */}
-      <Section className="bg-white">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Sri Jayarama Group of Companies</h2>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Started as a spare parts retailer in 1974 in the town of Mahabubnagar, we have grown with a footprint across 9 districts of Telangana with over 40+ showrooms and 100+ touch points.
-            </p>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              We are a diversified group with dealerships in Automobiles, Tractors, Construction Equipment, and interests in Manufacturing and Real Estate.
-            </p>
-            <Button to="/about" variant="secondary">More About Us</Button>
-          </div>
-          <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
-            <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800"
-              alt="Team collaboration"
-              className="w-full h-full object-cover"
-            />
-          </div>
+      {/* Introduction Section - Clean & Minimal */}
+      <Section className="py-20">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white tracking-tight">
+            Sri Jayarama Group
+          </h2>
+          <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-light">
+            A legacy of trust and excellence since 1974. From humble beginnings in Mahabubnagar to a diversified conglomerate empowering lives across Telangana.
+          </p>
         </div>
       </Section>
 
-      {/* Verticals Highlight */}
-      <Section className="bg-gray-50">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Verticals</h2>
-          <p className="text-gray-600">Driving growth across diverse sectors including Automotive, Agriculture, and Infrastructure.</p>
+      {/* Business Sectors - Grid Layout */}
+      <Section className="py-24">
+        <div className="flex justify-between items-end mb-16 px-4">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Business Sectors</h2>
+            <p className="text-gray-400 text-lg">Driving growth across diverse industries</p>
+          </div>
+          <Button to="/verticals" variant="outline" className="hidden md:inline-flex border-gray-600 text-white hover:bg-white hover:text-black">View All Sectors</Button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
           {featuredVerticals.map((vertical) => (
             <Card
               key={vertical.id}
@@ -62,38 +46,70 @@ const Home = () => {
               image={vertical.image}
               link={vertical.link}
               external={vertical.external}
+              className="h-full"
             />
           ))}
         </div>
-        <div className="text-center mt-12">
-          <Button to="/verticals" variant="primary">View All Verticals</Button>
+        <div className="mt-12 text-center md:hidden">
+          <Button to="/verticals" variant="outline" className="border-gray-600 text-white hover:bg-white hover:text-black">View All Sectors</Button>
         </div>
       </Section>
 
-      {/* Latest News */}
-      <Section className="bg-white">
-        <div className="flex justify-between items-end mb-12">
+      {/* Stories / Media Section */}
+      <Section className="py-24">
+        <div className="flex justify-between items-end mb-16 px-4">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Latest News</h2>
-            <p className="text-gray-600">Updates and announcements from across the group.</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Stories</h2>
+            <p className="text-gray-400 text-lg">Latest updates and milestones</p>
           </div>
-          <Link to="#" className="hidden md:flex items-center text-primary font-semibold hover:translate-x-2 transition-transform">
+          <Link to="#" className="hidden md:flex items-center text-blue-400 font-semibold hover:translate-x-2 transition-transform">
             View Archives <ArrowRight size={20} className="ml-2" />
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
           {news.map((item) => (
-            <Card
-              key={item.id}
-              title={item.title}
-              image={item.image}
-              date={item.date}
-              category={item.category}
-              link="#"
-            />
+            <div key={item.id} className="group cursor-pointer">
+              <div className="relative overflow-hidden rounded-lg aspect-[4/3] mb-6">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="space-y-3">
+                <span className="text-blue-400 font-medium text-sm tracking-wider uppercase">{item.category}</span>
+                <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors leading-snug">
+                  {item.title}
+                </h3>
+                <p className="text-gray-500 text-sm">{item.date}</p>
+              </div>
+            </div>
           ))}
         </div>
       </Section>
+
+      {/* Community / Sustainability Section - Full Width Image */}
+      <div className="relative h-[600px] w-full overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=2000"
+            alt="Community"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center text-center px-4">
+          <div className="max-w-4xl">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">Committed to Community</h2>
+            <p className="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed max-w-2xl mx-auto">
+              We believe in giving back to the society that has supported us for decades. Our initiatives in health, education, and environment reflect our core values.
+            </p>
+            <Button to="/sustainability" variant="primary" className="bg-white text-black hover:bg-blue-600 hover:text-white border-none">
+              Explore Our Initiatives
+            </Button>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

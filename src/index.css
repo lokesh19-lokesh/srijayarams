@@ -3,9 +3,14 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gray-50 text-gray-900 font-sans antialiased;
+  @apply bg-[#121212] text-gray-100 font-sans antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @apply font-bold tracking-tight;
 }

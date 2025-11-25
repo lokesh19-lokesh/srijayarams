@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#121212]/90 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'
         }`}
     >
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
@@ -51,9 +51,7 @@ const Navbar = () => {
                   to={link.path}
                   className={`text-base font-bold transition-colors hover:text-primary ${location.pathname === link.path
                     ? 'text-primary'
-                    : scrolled
-                      ? 'text-gray-700'
-                      : 'text-white'
+                    : 'text-white'
                     }`}
                 >
                   {link.name}
