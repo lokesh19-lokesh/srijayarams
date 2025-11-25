@@ -31,6 +31,23 @@ import tractorbaazi from '../assets/brands/tractorbaazi.png';
 import trueValue from '../assets/brands/true-value.png';
 import tvs from '../assets/brands/tvs.png';
 
+// Import Sector Images
+import sectorExide from '../assets/homebrandsecto/exide.jpeg';
+import sectorGoodyear from '../assets/homebrandsecto/goodyear_tyre.jpg';
+import sectorMahindraConstruction from '../assets/homebrandsecto/mahindra _construction_equipment.jpg';
+import sectorMahindraXChange from '../assets/homebrandsecto/mahindra_tractor_x_change.jpg';
+import sectorMahindraTractors from '../assets/homebrandsecto/mahindra_tractors1.webp';
+import sectorManufacturing from '../assets/homebrandsecto/manufacturing_unit.jpeg';
+import sectorMarutiArena from '../assets/homebrandsecto/maruti_suzuki_arena.webp';
+import sectorMarutiCommercial from '../assets/homebrandsecto/maruti_suzuki_commercial.webp';
+import sectorMarutiNexa from '../assets/homebrandsecto/maruti_suzuki_nexa.webp';
+import sectorMarutiTrueValue from '../assets/homebrandsecto/maruti_suzuki_true_value.jpg';
+import sectorRoots from '../assets/homebrandsecto/root_adding_values.jpeg';
+import sectorShaktiman from '../assets/homebrandsecto/shaktiman_agro.jpeg';
+import sectorSriRama from '../assets/homebrandsecto/sir_rama_landmark.jpeg';
+import sectorTotalEnergies from '../assets/homebrandsecto/total_energies.avif';
+import sectorTvs from '../assets/homebrandsecto/tvs_motors.webp';
+
 const brandLogos = [
   { src: commercial, alt: 'Commercial' },
   { src: exide, alt: 'Exide' },
@@ -61,21 +78,21 @@ const Home = () => {
 
   // Map IDs to imported images
   const sectorImages = {
-    'mahindra-tractors': mahindraTractors,
-    'mahindra-construction-equipment': mahindraConstruction,
-    'mahindra-tractor-x-change': tractorbaazi,
-    'maruti-suzuki-arena': marutiArena,
-    'maruti-suzuki-nexa': nexa,
-    'maruti-suzuki-true-value': trueValue,
-    'maruti-suzuki-commercial': commercial,
-    'tvs-motor': tvs,
-    'total-energies': totalEnergies,
-    'shaktiman-agro': sakthiman,
-    'goodyear-tyres': goodYear,
-    'roots': roots,
-    'exide': exide,
-    'manufacturing-unit': jayaramaTrailor,
-    'sri-rama-landmark': jayaramaLandmark,
+    'mahindra-tractors': sectorMahindraTractors,
+    'mahindra-construction-equipment': sectorMahindraConstruction,
+    'mahindra-tractor-x-change': sectorMahindraXChange,
+    'maruti-suzuki-arena': sectorMarutiArena,
+    'maruti-suzuki-nexa': sectorMarutiNexa,
+    'maruti-suzuki-true-value': sectorMarutiTrueValue,
+    'maruti-suzuki-commercial': sectorMarutiCommercial,
+    'tvs-motor': sectorTvs,
+    'total-energies': sectorTotalEnergies,
+    'shaktiman-agro': sectorShaktiman,
+    'goodyear-tyres': sectorGoodyear,
+    'roots': sectorRoots,
+    'exide': sectorExide,
+    'manufacturing-unit': sectorManufacturing,
+    'sri-rama-landmark': sectorSriRama,
   };
 
   return (
@@ -154,7 +171,7 @@ const Home = () => {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
           {displayedVerticals.map((vertical) => {
             const isExternal = vertical.external || (vertical.link && vertical.link.startsWith('http'));
             const displayImage = sectorImages[vertical.id] || vertical.image;
