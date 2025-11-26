@@ -4,11 +4,34 @@
 
 html,
 body {
-  @apply bg-[#121212] text-gray-100 font-sans antialiased overflow-x-hidden;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  @apply bg-[#121212] text-gray-100 font-sans antialiased;
 }
 
 #root {
   @apply min-h-screen w-full;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for consistency */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 h1,
