@@ -30,7 +30,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-1">
             <Link to="/" className="mb-6 block">
-              <img src="/src/assets/logo.png" alt="Sri Jayarama Group" className="h-12 w-auto brightness-0 invert" />
+              <h2 className="text-1xl font-bold text-white whitespace-nowrap">శ్రీ రామ జయరామ</h2>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               A collective force for progress, shaping the future with integrity and excellence across diverse sectors.
