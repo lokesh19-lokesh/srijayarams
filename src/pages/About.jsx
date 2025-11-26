@@ -10,7 +10,8 @@ import mahindraTractor from '../assets/mahindra_tractor.jpg';
 import tvsRaider from '../assets/tvs_raider.png';
 import marutiArena from '../assets/maruti_arena.png';
 import marutiCommercial from '../assets/maruti_commercial.png';
-import nexaImg from '../assets/s1.png';
+// import nexaImg from '../assets/s1.png';
+import nexaImg from '../assets/nexa.avif';
 
 const About = () => {
   return (
