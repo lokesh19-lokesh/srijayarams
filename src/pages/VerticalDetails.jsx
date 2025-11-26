@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { verticals } from '../data/mockData';
 import Section from '../components/Section';
 import Button from '../components/Button';
@@ -20,6 +21,11 @@ const VerticalDetails = () => {
 
   return (
     <>
+      <SEO
+        title={vertical.title}
+        description={vertical.description}
+        keywords={`${vertical.title}, Sri Rama Jayarama, Business, Services`}
+      />
       <div className="pt-24"></div>
 
       <Section className="py-24">

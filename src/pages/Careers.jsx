@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
 import { ArrowUpRight } from 'lucide-react';
 import Section from '../components/Section';
 import Button from '../components/Button';
@@ -16,6 +17,11 @@ const Careers = () => {
 
   return (
     <>
+      <SEO
+        title="Careers"
+        description="Join Sri Rama Jayarama Group. Explore career opportunities, our culture, and how we empower our employees."
+        keywords="Careers, Jobs, Sri Rama Jayarama, Employment, Work Culture, Hiring"
+      />
       <div className="pt-24"></div>
 
       <div

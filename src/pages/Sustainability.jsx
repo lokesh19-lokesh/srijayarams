@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import Section from '../components/Section';
 import { Leaf, Droplets, Sun, Users } from 'lucide-react';
 import sustainabilityImg from '../assets/sustainability.jpeg';
@@ -6,6 +7,11 @@ import sustainabilityImg from '../assets/sustainability.jpeg';
 const Sustainability = () => {
   return (
     <>
+      <SEO
+        title="Sustainability"
+        description="Sri Rama Jayarama Group's commitment to sustainability, net zero, and community empowerment."
+        keywords="Sustainability, Net Zero, Renewable Energy, Community, Environment, Sri Rama Jayarama"
+      />
       <div className="pt-24"></div>
 
       <div

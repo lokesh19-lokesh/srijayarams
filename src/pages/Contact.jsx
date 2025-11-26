@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import Section from '../components/Section';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import backImg from '../assets/back.jpg';
@@ -6,6 +7,11 @@ import backImg from '../assets/back.jpg';
 const Contact = () => {
   return (
     <>
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Sri Rama Jayarama Group. We are here to assist you with your queries and business needs."
+        keywords="Contact Sri Rama Jayarama, Support, Address, Phone, Email, Enquiry"
+      />
       <div className="pt-24"></div>
 
       <div

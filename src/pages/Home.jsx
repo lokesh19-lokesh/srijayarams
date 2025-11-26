@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Card from '../components/Card';
@@ -98,6 +99,11 @@ const Home = () => {
 
   return (
     <>
+      <SEO
+        title="Home"
+        description="Sri Rama Jayarama Group - A legacy of trust and excellence since 1974. Leading in Steel, Automotive, and Sustainable Solutions."
+        keywords="Sri Rama Jayarama, Steel, Automotive, Sustainability, Business, Conglomerate, Telangana"
+      />
       <Hero />
 
       {/* Inspiration Ticker */}

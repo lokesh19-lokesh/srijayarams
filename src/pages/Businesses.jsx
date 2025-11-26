@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import Section from '../components/Section';
 import Card from '../components/Card';
 import { verticals } from '../data/mockData';
@@ -6,6 +7,11 @@ import { verticals } from '../data/mockData';
 const Businesses = () => {
   return (
     <>
+      <SEO
+        title="Our Businesses"
+        description="Explore Sri Rama Jayarama Group's diverse business sectors including Automotive, Agriculture, Construction, and more."
+        keywords="Sri Rama Jayarama Businesses, Automotive, Agriculture, Construction, Real Estate, Manufacturing"
+      />
       <div className="pt-24"></div>
 
       <Section className="py-24">

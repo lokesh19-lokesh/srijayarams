@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import Section from '../components/Section';
 import { Award, Target, Heart, Users, TrendingUp, ArrowUpRight } from 'lucide-react';
 import ramReddyImg from '../assets/aboutimage/BekkariRamReddy.png';
@@ -16,9 +17,13 @@ import nexaImg from '../assets/nexa.avif';
 const About = () => {
   return (
     <>
+      <SEO
+        title="About Us"
+        description="Learn about Sri Rama Jayarama Group's vision, mission, and leadership. A journey of excellence and community commitment."
+        keywords="About Sri Rama Jayarama, Vision, Mission, Leadership, History, Achievements"
+      />
       <div className="pt-24"></div>
 
-      {/* Vision & Mission */}
       <div
         className="relative bg-cover bg-center bg-no-repeat bg-fixed"
         style={{ backgroundImage: `url(${cover})` }}
