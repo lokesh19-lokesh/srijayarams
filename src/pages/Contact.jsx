@@ -1,6 +1,5 @@
 import React from 'react';
 import Section from '../components/Section';
-import Button from '../components/Button';
 import { MapPin, Phone, Mail } from 'lucide-react';
 
 const Contact = () => {
@@ -36,7 +35,7 @@ const Contact = () => {
                 <Mail className="text-blue-500 mt-1 mr-4" size={24} />
                 <div>
                   <h3 className="text-xl font-bold mb-2 text-white">Email</h3>
-                  <p className="text-gray-400">contact@srijayarama.com</p>
+                  <p className="text-gray-400">support@srijayarama.com</p>
                 </div>
               </div>
             </div>
@@ -48,23 +47,40 @@ const Contact = () => {
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-2">First Name</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="John" />
+                  <label className="block text-sm font-medium text-gray-400 mb-2">Full Name*</label>
+                  <input type="text" required className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-2">Last Name</label>
-                  <input type="text" className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="Doe" />
+                  <label className="block text-sm font-medium text-gray-400 mb-2">Email*</label>
+                  <input type="email" required className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" />
                 </div>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">Email</label>
-                <input type="email" className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="john@example.com" />
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-400 mb-2">Mobile*</label>
+                  <input type="tel" required className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-400 mb-2">Purpose*</label>
+                  <select className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all appearance-none">
+                    <option value="" disabled selected>Please select a Purpose</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="sales">Sales</option>
+                    <option value="support">Support</option>
+                    <option value="careers">Careers</option>
+                  </select>
+                </div>
               </div>
+
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">Message</label>
-                <textarea rows="4" className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" placeholder="How can we help you?"></textarea>
+                <label className="block text-sm font-medium text-gray-400 mb-2">Message*</label>
+                <textarea rows="4" required className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"></textarea>
               </div>
-              <Button variant="primary" className="w-full">Send Message</Button>
+
+              <button type="submit" className="bg-[#F97316] text-white px-8 py-3 rounded-lg font-bold hover:bg-[#EA580C] transition-colors flex items-center gap-2">
+                Send Message <span className="text-xl">→</span>
+              </button>
             </form>
           </div>
         </div>
