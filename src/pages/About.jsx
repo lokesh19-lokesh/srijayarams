@@ -43,7 +43,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div className="h-full min-h-[300px] rounded-2xl overflow-hidden">
+              <div className="h-full min-h-[300px] max-w-sm mx-auto rounded-2xl overflow-hidden">
                 <img
                   src={vision}
                   alt="Our Vision"
@@ -54,7 +54,7 @@ const About = () => {
 
             {/* Mission */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-              <div className="h-full min-h-[300px] rounded-2xl overflow-hidden order-2 md:order-1">
+              <div className="h-full min-h-[300px] max-w-sm mx-auto rounded-2xl overflow-hidden order-2 md:order-1">
                 <img
                   src={mission}
                   alt="Our Mission"
