@@ -102,7 +102,7 @@ const Home = () => {
 
       {/* Inspiration Ticker */}
       <div className="bg-blue-900/20 border-y border-blue-500/20 py-4 overflow-hidden relative">
-        <div className="whitespace-nowrap animate-ticker hover:pause flex items-center">
+        <div className="whitespace-nowrap animate-ticker flex items-center">
           <span className="text-blue-200 text-lg font-medium mx-4 inline-block">
             Sri Bekkari Balakista Reddy also known as Mechanic Balakista Reddy is a great inspiration for all of us. His commitment to customer satisfaction will always make us reenergise and go that extra mile to achieve the customer satisfaction. Though he is not with us now, his values and his works will inspire us daily and motivate to work hard to achieve new heights.
           </span>
@@ -137,7 +137,7 @@ const Home = () => {
           </div>
 
           <div className="relative w-full overflow-hidden">
-            <div className="flex w-fit animate-marquee hover:pause">
+            <div className="flex w-fit animate-marquee">
               {[0, 1].map((i) => (
                 <div key={i} className="flex items-center gap-12 px-6">
                   {brandLogos.map((brand, index) => (
