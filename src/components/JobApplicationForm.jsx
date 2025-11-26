@@ -37,12 +37,40 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle }) => {
           Apply for a job
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form
+          className="space-y-6"
+          onSubmit={async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            formData.append('jobRole', jobTitle); // Add job role to form data
+
+            try {
+              const response = await fetch('/send-mail.php', {
+                method: 'POST',
+                body: formData
+              });
+
+              if (response.ok) {
+                alert('Application Submitted Successfully!');
+                form.reset();
+                setFileName('No file chosen');
+                onClose();
+              } else {
+                alert('Failed to submit application. Please try again.');
+              }
+            } catch (error) {
+              console.error('Error:', error);
+              alert('An error occurred. Please try again.');
+            }
+          }}
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Full Name */}
             <div className="space-y-2">
               <label className="block text-white font-medium">Full Name*</label>
               <input
+                name="name"
                 type="text"
                 required
                 className="w-full bg-transparent border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
@@ -53,6 +81,7 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle }) => {
             <div className="space-y-2">
               <label className="block text-white font-medium">Email*</label>
               <input
+                name="email"
                 type="email"
                 required
                 className="w-full bg-transparent border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
@@ -63,6 +92,7 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle }) => {
             <div className="space-y-2">
               <label className="block text-white font-medium">Mobile*</label>
               <input
+                name="mobile"
                 type="tel"
                 required
                 className="w-full bg-transparent border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
@@ -76,9 +106,11 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle }) => {
                 <input
                   type="file"
                   id="resume"
+                  name="resume"
                   className="hidden"
                   onChange={handleFileChange}
                   accept=".pdf,.doc,.docx"
+                  required
                 />
                 <label
                   htmlFor="resume"
@@ -95,6 +127,7 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle }) => {
           <div className="space-y-2">
             <label className="block text-white font-medium">Message*</label>
             <textarea
+              name="message"
               required
               rows="4"
               className="w-full bg-transparent border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors resize-none"
