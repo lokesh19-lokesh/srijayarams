@@ -7,6 +7,8 @@ import Businesses from './pages/Businesses';
 import Sustainability from './pages/Sustainability';
 import Careers from './pages/Careers';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfUse from './pages/TermsOfUse';
 import ScrollToTop from './components/ScrollToTop';
 
 import VerticalDetails from './pages/VerticalDetails';
@@ -24,6 +26,8 @@ function App() {
           <Route path="sustainability" element={<Sustainability />} />
           <Route path="careers" element={<Careers />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="terms-of-use" element={<TermsOfUse />} />
         </Route>
       </Routes>
     </>

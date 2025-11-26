@@ -102,7 +102,7 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin size={18} className="mr-3 mt-1 flex-shrink-0 text-blue-500" />
                 <span>
-                  SRI JAYARAMA GROUP OF COMPANIES,<br />
+                  SRI RAMA JAYARAMA GROUP OF COMPANIES,<br />
                   Plot No. C1 & C2, Industrial Estate,<br />
                   Mettugadda, Mahbubnagar,<br />
                   Telangana 509001
@@ -122,15 +122,15 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
           <div className="flex flex-col md:flex-row items-center md:space-x-4 text-center md:text-left">
-            <p>&copy; {new Date().getFullYear()} Sri Jayarama Group. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Sri Rama Jayarama Group. All rights reserved.</p>
             <span className="hidden md:inline">|</span>
             <p className="mt-2 md:mt-0">
               Designed by <a href="https://thepatternscompany.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">The Patterns Company</a>
             </p>
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Use</a>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-use" className="hover:text-white transition-colors">Terms of Use</Link>
           </div>
         </div>
       </div>
