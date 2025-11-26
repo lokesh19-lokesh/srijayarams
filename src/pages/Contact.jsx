@@ -1,114 +1,121 @@
 import React from 'react';
 import Section from '../components/Section';
 import { MapPin, Phone, Mail } from 'lucide-react';
+import backImg from '../assets/back.jpg';
 
 const Contact = () => {
   return (
     <>
       <div className="pt-24"></div>
 
-      <Section className="py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          {/* Contact Info */}
-          <div>
-            <h2 className="text-3xl font-bold mb-8 text-white">Head Office</h2>
-            <div className="space-y-8">
-              <div className="flex items-start">
-                <MapPin className="text-blue-500 mt-1 mr-4" size={24} />
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-white">Address</h3>
-                  <p className="text-gray-400">
-                    SRI JAYARAMA GROUP OF COMPANIES,<br />
-                    Plot No. C1 & C2, Industrial Estate,<br />
-                    Mettugadda, Mahbubnagar, Telangana 509001
-                  </p>
+      <div
+        className="relative bg-cover bg-center bg-no-repeat bg-fixed"
+        style={{ backgroundImage: `url(${backImg})` }}
+      >
+        <div className="absolute inset-0 bg-black/80"></div>
+        <Section className="relative z-10 py-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            {/* Contact Info */}
+            <div>
+              <h2 className="text-3xl font-bold mb-8 text-white">Head Office</h2>
+              <div className="space-y-8">
+                <div className="flex items-start">
+                  <MapPin className="text-blue-500 mt-1 mr-4" size={24} />
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 text-white">Address</h3>
+                    <p className="text-gray-300 font-medium">
+                      SRI JAYARAMA GROUP OF COMPANIES,<br />
+                      Plot No. C1 & C2, Industrial Estate,<br />
+                      Mettugadda, Mahbubnagar, Telangana 509001
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start">
-                <Phone className="text-blue-500 mt-1 mr-4" size={24} />
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-white">Phone</h3>
-                  <p className="text-gray-400">1800 843 1999</p>
+                <div className="flex items-start">
+                  <Phone className="text-blue-500 mt-1 mr-4" size={24} />
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 text-white">Phone</h3>
+                    <p className="text-gray-300 font-medium">1800 843 1999</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start">
-                <Mail className="text-blue-500 mt-1 mr-4" size={24} />
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-white">Email</h3>
-                  <p className="text-gray-400">support@srijayarama.com</p>
+                <div className="flex items-start">
+                  <Mail className="text-blue-500 mt-1 mr-4" size={24} />
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 text-white">Email</h3>
+                    <p className="text-gray-300 font-medium">support@srijayarama.com</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Contact Form */}
-          <div className="bg-[#1a1a1a] p-8 rounded-2xl border border-gray-800">
-            <h3 className="text-2xl font-bold mb-6 text-white">Send us a message</h3>
-            <form
-              className="space-y-6"
-              onSubmit={async (e) => {
-                e.preventDefault();
-                const form = e.target;
-                const formData = new FormData(form);
+            {/* Contact Form */}
+            <div className="bg-[#1a1a1a]/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-800">
+              <h3 className="text-2xl font-bold mb-6 text-white">Send us a message</h3>
+              <form
+                className="space-y-6"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  const form = e.target;
+                  const formData = new FormData(form);
 
-                try {
-                  const response = await fetch('/send-mail.php', {
-                    method: 'POST',
-                    body: formData
-                  });
+                  try {
+                    const response = await fetch('/send-mail.php', {
+                      method: 'POST',
+                      body: formData
+                    });
 
-                  if (response.ok) {
-                    alert('Message Sent Successfully!');
-                    form.reset();
-                  } else {
-                    alert('Failed to send message. Please try again.');
+                    if (response.ok) {
+                      alert('Message Sent Successfully!');
+                      form.reset();
+                    } else {
+                      alert('Failed to send message. Please try again.');
+                    }
+                  } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again.');
                   }
-                } catch (error) {
-                  console.error('Error:', error);
-                  alert('An error occurred. Please try again.');
-                }
-              }}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-2">Full Name*</label>
-                  <input name="name" type="text" required className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" />
+                }}
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Full Name*</label>
+                    <input name="name" type="text" required className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Email*</label>
+                    <input name="email" type="email" required className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" />
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-2">Email*</label>
-                  <input name="email" type="email" required className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" />
-                </div>
-              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-2">Mobile*</label>
-                  <input name="mobile" type="tel" required className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Mobile*</label>
+                    <input name="mobile" type="tel" required className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-400 mb-2">Purpose*</label>
+                    <select name="purpose" className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all appearance-none">
+                      <option value="" disabled selected>Please select a Purpose</option>
+                      <option value="general">General Inquiry</option>
+                      <option value="sales">Sales</option>
+                      <option value="support">Support</option>
+                      <option value="careers">Careers</option>
+                    </select>
+                  </div>
                 </div>
+
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-2">Purpose*</label>
-                  <select name="purpose" className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all appearance-none">
-                    <option value="" disabled selected>Please select a Purpose</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="sales">Sales</option>
-                    <option value="support">Support</option>
-                    <option value="careers">Careers</option>
-                  </select>
+                  <label className="block text-sm font-medium text-gray-400 mb-2">Message*</label>
+                  <textarea name="message" rows="4" required className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"></textarea>
                 </div>
-              </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">Message*</label>
-                <textarea name="message" rows="4" required className="w-full px-4 py-3 rounded-lg bg-[#121212] border border-gray-700 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"></textarea>
-              </div>
-
-              <button type="submit" className="bg-[#F97316] text-white px-8 py-3 rounded-lg font-bold hover:bg-[#EA580C] transition-colors flex items-center gap-2">
-                Send Message <span className="text-xl">→</span>
-              </button>
-            </form>
+                <button type="submit" className="bg-[#F97316] text-white px-8 py-3 rounded-lg font-bold hover:bg-[#EA580C] transition-colors flex items-center gap-2">
+                  Send Message <span className="text-xl">→</span>
+                </button>
+              </form>
+            </div>
           </div>
-        </div>
-      </Section>
+        </Section>
+      </div>
 
       {/* Google Map */}
       <Section className="py-0 pb-24">
