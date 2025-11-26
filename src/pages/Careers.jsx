@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ArrowUpRight } from 'lucide-react';
 import Section from '../components/Section';
 import Button from '../components/Button';
+import JobApplicationForm from '../components/JobApplicationForm';
 
 const Careers = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedJob, setSelectedJob] = useState(null);
+
+  const handleApply = (job) => {
+    setSelectedJob(job);
+    setIsModalOpen(true);
+  };
+
   return (
     <>
       <div className="pt-24"></div>
@@ -21,32 +31,63 @@ const Careers = () => {
             { title: 'Global Exposure', desc: 'Work with teams across 100+ countries.' },
             { title: 'Continuous Learning', desc: 'Access to world-class training and development programs.' },
             { title: 'Inclusive Culture', desc: 'A workplace that values diversity and fosters belonging.' },
-          ].map((item, index) => (
-            <div key={index} className="p-8 bg-[#1a1a1a] rounded-xl text-center hover:shadow-md transition-shadow border border-gray-800">
-              <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
-              <p className="text-gray-400">{item.desc}</p>
-            </div>
-          ))}
+          ].map((item, index) => {
+            const bgStyles = [
+              'bg-[#0099FF]', // Solid Blue
+              'bg-gradient-to-r from-orange-500 to-purple-600', // Orange-Purple Gradient
+              'bg-gradient-to-br from-blue-900 to-slate-900', // Deep Blue Gradient
+            ];
+            const bgStyle = bgStyles[index % bgStyles.length];
+
+            return (
+              <div
+                key={index}
+                className={`group relative overflow-hidden rounded-xl border border-gray-800 transition-all duration-300 hover:-translate-y-1 h-full min-h-[300px] flex flex-col justify-between ${bgStyle} p-8`}
+              >
+                <div className="mb-auto">
+                  <h3 className="text-xl font-bold mb-4 leading-tight text-white">{item.title}</h3>
+                  <div className="pl-4 border-l-2 border-yellow-500">
+                    <p className="text-white/90 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+                <div className="flex justify-end mt-6">
+                  <ArrowUpRight className="transition-colors duration-300 text-white group-hover:text-yellow-500" size={24} />
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <h3 className="text-2xl font-bold mb-8 text-white">Current Openings</h3>
         <div className="space-y-4">
           {[
-            { role: 'Senior Software Engineer', location: 'Bangalore, India', type: 'Full-time' },
-            { role: 'Sustainability Analyst', location: 'London, UK', type: 'Full-time' },
-            { role: 'Product Manager', location: 'New York, USA', type: 'Full-time' },
-            { role: 'HR Business Partner', location: 'Mumbai, India', type: 'Full-time' },
+            { role: 'Sales Executive', location: 'Hyderabad, India', type: 'Full-time' },
+            { role: 'Marketing Manager', location: 'Hyderabad, India', type: 'Full-time' },
+            { role: 'Digital Marketing Specialist', location: 'Hyderabad, India', type: 'Full-time' },
+            { role: 'Business Development Manager', location: 'Hyderabad, India', type: 'Full-time' },
           ].map((job, index) => (
             <div key={index} className="flex flex-col md:flex-row justify-between items-center p-6 border border-gray-700 rounded-xl hover:border-blue-500 transition-colors bg-[#1a1a1a]">
               <div className="mb-4 md:mb-0 text-center md:text-left">
                 <h4 className="text-lg font-bold text-white">{job.role}</h4>
                 <p className="text-gray-400">{job.location} • {job.type}</p>
               </div>
-              <Button variant="outline" className="text-blue-400 border-blue-400 hover:bg-blue-900/20">Apply Now</Button>
+              <Button
+                onClick={() => handleApply(job)}
+                variant="outline"
+                className="text-blue-400 border-blue-400 hover:bg-blue-900/20"
+              >
+                Apply Now
+              </Button>
             </div>
           ))}
         </div>
       </Section>
+
+      <JobApplicationForm
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        jobTitle={selectedJob?.role}
+      />
     </>
   );
 };
