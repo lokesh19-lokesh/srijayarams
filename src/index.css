@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
 body {
-  @apply bg-[#121212] text-gray-100 font-sans antialiased;
+  @apply bg-[#121212] text-gray-100 font-sans antialiased overflow-x-hidden;
+}
+
+#root {
+  @apply min-h-screen w-full;
 }
 
 h1,

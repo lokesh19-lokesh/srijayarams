@@ -110,7 +110,7 @@ const Home = () => {
       </div>
 
       {/* Combined Introduction and Brands Section */}
-      <div className="relative py-20 overflow-hidden">
+      <div className="relative w-full py-20 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img src={backImg} alt="Background" className="w-full h-full object-cover" />
