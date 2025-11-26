@@ -23,21 +23,21 @@ const FAQ = ({ questions, title = "Frequently Asked Questions", description = "F
   };
 
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-24">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">{title}</h2>
-          <p className="text-gray-600">{description}</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">{title}</h2>
+          <p className="text-gray-400">{description}</p>
         </div>
 
         <div className="space-y-4">
           {questions.map((q, index) => (
-            <div key={index} className="bg-white rounded-xl border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-md">
+            <div key={index} className="bg-[#1a1a1a] rounded-xl border border-gray-800 overflow-hidden transition-all duration-300 hover:border-blue-500/50">
               <button
                 className="w-full flex justify-between items-center p-6 text-left focus:outline-none"
                 onClick={() => toggleFAQ(index)}
               >
-                <span className="text-lg font-semibold text-gray-800 pr-8">{q.question}</span>
+                <span className="text-lg font-semibold text-white pr-8">{q.question}</span>
                 {openIndex === index ? (
                   <ChevronUp className="text-blue-600 flex-shrink-0" size={20} />
                 ) : (
@@ -48,7 +48,7 @@ const FAQ = ({ questions, title = "Frequently Asked Questions", description = "F
                 className={`transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   }`}
               >
-                <div className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-100 mt-2">
+                <div className="p-6 pt-0 text-gray-400 leading-relaxed border-t border-gray-800 mt-2">
                   {q.answer}
                 </div>
               </div>
