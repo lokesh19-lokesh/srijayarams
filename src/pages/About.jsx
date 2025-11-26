@@ -21,6 +21,20 @@ const About = () => {
         title="About Us"
         description="Learn about Sri Rama Jayarama Group's vision, mission, and leadership. A journey of excellence and community commitment."
         keywords="About Sri Rama Jayarama, Vision, Mission, Leadership, History, Achievements"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Sri Rama Jayarama Group",
+            "foundingDate": "1974",
+            "description": "Sri Rama Jayarama Group is a diversified conglomerate based in Mahabubnagar, Telangana, with interests in automotive dealerships, construction, agriculture, and energy.",
+            "founder": {
+              "@type": "Person",
+              "name": "Sri Bekkari Balakista Reddy"
+            }
+          }
+        }}
       />
       <div className="pt-24"></div>
 

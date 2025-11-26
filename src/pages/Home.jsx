@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import Section from '../components/Section';
 import Card from '../components/Card';
 import Button from '../components/Button';
+import FAQ from '../components/FAQ';
 import { stories, verticals } from '../data/mockData';
 import { ArrowRight } from 'lucide-react';
 import bg from '../assets/hf.avif';
@@ -103,6 +104,35 @@ const Home = () => {
         title="Home"
         description="Sri Rama Jayarama Group - A legacy of trust and excellence since 1974. Leading in Steel, Automotive, and Sustainable Solutions."
         keywords="Sri Rama Jayarama, Steel, Automotive, Sustainability, Business, Conglomerate, Telangana"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Sri Rama Jayarama Group",
+          "url": "https://srijayarama.com",
+          "logo": "https://srijayarama.com/assets/logo.png",
+          "foundingDate": "1974",
+          "founders": [
+            {
+              "@type": "Person",
+              "name": "Sri Bekkari Balakista Reddy"
+            }
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mahabubnagar",
+            "addressRegion": "Telangana",
+            "addressCountry": "IN"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-9876543210",
+            "contactType": "customer service"
+          },
+          "sameAs": [
+            "https://www.facebook.com/srijayarama",
+            "https://www.instagram.com/srijayarama"
+          ]
+        }}
       />
       <Hero />
 
@@ -367,6 +397,28 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* FAQ Section */}
+      <FAQ
+        questions={[
+          {
+            question: "What is Sri Rama Jayarama Group?",
+            answer: "Sri Rama Jayarama Group is a diversified conglomerate based in Mahabubnagar, Telangana, established in 1974. We operate across multiple sectors including automotive dealerships (Maruti Suzuki, Mahindra, TVS), agriculture (tractors, implements), construction equipment, real estate, and energy."
+          },
+          {
+            question: "Who is the founder of Sri Rama Jayarama Group?",
+            answer: "The group was founded by the late Sri Bekkari Balakista Reddy (Mechanic Balakista Reddy) in 1974. It is currently led by Managing Director Sri Bekkari Ram Reddy."
+          },
+          {
+            question: "Where is the company headquartered?",
+            answer: "Our headquarters are located in Mahabubnagar, Telangana. We have a strong presence across the district with over 15 verticals."
+          },
+          {
+            question: "What brands are associated with the group?",
+            answer: "We are authorized dealers for major brands including Mahindra Tractors, Maruti Suzuki (Arena, Nexa, Commercial, True Value), TVS Motor, Goodyear Tyres, Exide Batteries, and Total Energies. We also have our own brands like Sri Rama Landmark and Manufacturing Unit."
+          }
+        ]}
+      />
     </>
   );
 };

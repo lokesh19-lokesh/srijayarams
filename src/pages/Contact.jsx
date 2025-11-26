@@ -11,6 +11,26 @@ const Contact = () => {
         title="Contact Us"
         description="Get in touch with Sri Rama Jayarama Group. We are here to assist you with your queries and business needs."
         keywords="Contact Sri Rama Jayarama, Support, Address, Phone, Email, Enquiry"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": "Sri Rama Jayarama Group",
+            "image": "https://srijayarama.com/assets/logo.png",
+            "telephone": "1800 843 1999",
+            "email": "support@srijayarama.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Plot No. C1 & C2, Industrial Estate, Mettugadda",
+              "addressLocality": "Mahabubnagar",
+              "addressRegion": "Telangana",
+              "postalCode": "509001",
+              "addressCountry": "IN"
+            },
+            "url": "https://srijayarama.com/contact"
+          }
+        }}
       />
       <div className="pt-24"></div>
 

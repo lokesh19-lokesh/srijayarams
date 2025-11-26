@@ -84,7 +84,7 @@ const Navbar = () => {
                                     href={item.path}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="group/item flex items-center text-sm text-gray-300 hover:text-white transition-colors py-1"
+                                    className="group/item flex items-center text-sm text-gray-300 hover:text-orange-500 transition-colors py-1"
                                   >
                                     <span className="w-1.5 h-1.5 rounded-full bg-primary mr-3 opacity-0 group-hover/item:opacity-100 transition-opacity"></span>
                                     Jayarama {item.name}
@@ -93,7 +93,7 @@ const Navbar = () => {
                                   <Link
                                     key={item.name}
                                     to={item.path}
-                                    className="group/item flex items-center text-sm text-gray-300 hover:text-white transition-colors py-1"
+                                    className="group/item flex items-center text-sm text-gray-300 hover:text-orange-500 transition-colors py-1"
                                   >
                                     <span className="w-1.5 h-1.5 rounded-full bg-primary mr-3 opacity-0 group-hover/item:opacity-100 transition-opacity"></span>
                                     Jayarama {item.name}
@@ -148,7 +148,7 @@ const Navbar = () => {
                               href={item.path}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="block text-sm text-gray-600 hover:text-primary"
+                              className="block text-sm text-gray-600 hover:text-orange-500"
                             >
                               Jayarama {item.name}
                             </a>
@@ -156,7 +156,7 @@ const Navbar = () => {
                             <Link
                               key={item.name}
                               to={item.path}
-                              className="block text-sm text-gray-600 hover:text-primary"
+                              className="block text-sm text-gray-600 hover:text-orange-500"
                             >
                               Jayarama {item.name}
                             </Link>
