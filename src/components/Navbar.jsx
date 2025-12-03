@@ -45,15 +45,15 @@ const Navbar = () => {
                 <div key={link.name} className="relative group">
                   {link.dropdown ? (
                     <button
-                      className="flex items-center text-base font-bold transition-colors hover:text-primary text-white"
+                      className="flex items-center text-base font-bold transition-colors hover:text-[#a6481b] text-white"
                     >
                       {link.name} <ChevronDown size={16} className="ml-1" />
                     </button>
                   ) : (
                     <Link
                       to={link.path}
-                      className={`text-base font-bold transition-colors hover:text-primary ${location.pathname === link.path
-                        ? 'text-primary'
+                      className={`text-base font-bold transition-colors hover:text-[#a6481b] ${location.pathname === link.path
+                        ? 'text-[#a6481b]'
                         : 'text-white'
                         }`}
                     >
@@ -87,7 +87,7 @@ const Navbar = () => {
                                       rel="noopener noreferrer"
                                       className="group/item flex items-center text-sm text-gray-300 hover:text-orange-500 transition-colors py-1"
                                     >
-                                      <span className="w-1.5 h-1.5 rounded-full bg-primary mr-3 opacity-0 group-hover/item:opacity-100 transition-opacity"></span>
+                                      <span className="w-1.5 h-1.5 rounded-full bg-[#a6481b] mr-3 opacity-0 group-hover/item:opacity-100 transition-opacity"></span>
                                       Jayarama {item.name}
                                     </a>
                                   ) : (
@@ -96,7 +96,7 @@ const Navbar = () => {
                                       to={item.path}
                                       className="group/item flex items-center text-sm text-gray-300 hover:text-orange-500 transition-colors py-1"
                                     >
-                                      <span className="w-1.5 h-1.5 rounded-full bg-primary mr-3 opacity-0 group-hover/item:opacity-100 transition-opacity"></span>
+                                      <span className="w-1.5 h-1.5 rounded-full bg-[#a6481b] mr-3 opacity-0 group-hover/item:opacity-100 transition-opacity"></span>
                                       Jayarama {item.name}
                                     </Link>
                                   )
@@ -113,7 +113,7 @@ const Navbar = () => {
             }
             <button
               onClick={() => setIsContactModalOpen(true)}
-              className="bg-primary text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors"
+              className="bg-[#a6481b] text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-[#a6481b] transition-colors"
             >
               Get in Touch
             </button >
@@ -171,7 +171,7 @@ const Navbar = () => {
                   ) : (
                     <Link
                       to={link.path}
-                      className={`block text-base font-medium ${location.pathname === link.path ? 'text-primary' : 'text-gray-700'
+                      className={`block text-base font-medium ${location.pathname === link.path ? 'text-[#a6481b]' : 'text-gray-700'
                         }`}
                     >
                       {link.name}
@@ -184,7 +184,7 @@ const Navbar = () => {
                   setIsOpen(false);
                   setIsContactModalOpen(true);
                 }}
-                className="bg-primary text-white px-5 py-2 rounded-full text-sm font-medium w-full"
+                className="bg-[#a6481b] text-white px-5 py-2 rounded-full text-sm font-medium w-full"
               >
                 Get in Touch
               </button>
