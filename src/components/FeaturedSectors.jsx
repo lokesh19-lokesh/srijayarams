@@ -5,7 +5,8 @@ import { ArrowRight, Settings, Truck, Car, HardHat } from 'lucide-react';
 import sectorMahindraConstruction from '../assets/homebrandsecto/mahindra _construction_equipment.png';
 import sectorMarutiArena from '../assets/homebrandsecto/maruti_suzuki_arena.png';
 import sectorManufacturing from '../assets/homebrandsecto/manufacturing_unit.png';
-
+import l1 from '../assets/l1.png';
+import l2 from '../assets/l2.png';
 const FeaturedSectors = () => {
   return (
     <div className="w-full bg-[#121212] py-12 border-b border-gray-800">
@@ -13,11 +14,11 @@ const FeaturedSectors = () => {
         <div className="flex flex-col gap-8">
 
           {/* Card 1: Constructions (Image Left, Content Right) */}
-          <div className="w-full flex flex-col md:flex-row min-h-[450px] rounded-lg overflow-hidden shadow-2xl">
+          <div className="w-full flex flex-col md:flex-row min-h-[350px] rounded-lg overflow-hidden shadow-2xl">
             {/* Image Side */}
             <div className="w-full md:w-1/2 relative h-64 md:h-auto">
               <img
-                src={sectorMahindraConstruction}
+                src={l1}
                 alt="Construction"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -62,7 +63,7 @@ const FeaturedSectors = () => {
           </div>
 
           {/* Card 2: Engineers Works (Content Left, Image Right) */}
-          <div className="w-full flex flex-col md:flex-row min-h-[450px] rounded-lg overflow-hidden shadow-2xl">
+          <div className="w-full flex flex-col md:flex-row min-h-[350px] rounded-lg overflow-hidden shadow-2xl">
             {/* Content Side - Teal/Blue Gradient (First on Desktop) */}
             <div className="w-full md:w-1/2 relative bg-gradient-to-r from-teal-900 to-blue-800 p-8 md:p-12 flex flex-col justify-center overflow-hidden order-2 md:order-1">
               {/* Watermark */}
@@ -102,7 +103,7 @@ const FeaturedSectors = () => {
             {/* Image Side (Second on Desktop) */}
             <div className="w-full md:w-1/2 relative h-64 md:h-auto order-1 md:order-2">
               <img
-                src={sectorManufacturing}
+                src={l2}
                 alt="Engineers Works"
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -111,7 +112,7 @@ const FeaturedSectors = () => {
           </div>
 
           {/* Card 3: Automobiles (Image Left, Content Right) */}
-          <div className="w-full flex flex-col md:flex-row min-h-[450px] rounded-lg overflow-hidden shadow-2xl">
+          <div className="w-full flex flex-col md:flex-row min-h-[350px] rounded-lg overflow-hidden shadow-2xl">
             {/* Image Side */}
             <div className="w-full md:w-1/2 relative h-64 md:h-auto">
               <img
