@@ -9,6 +9,7 @@ import FAQ from '../components/FAQ';
 import { stories, verticals } from '../data/mockData';
 import { ArrowRight } from 'lucide-react';
 import bg from '../assets/hf.avif';
+import FeaturedSectors from '../components/FeaturedSectors';
 
 // Import Background Image
 import backImg from '../assets/back.jpg';
@@ -145,16 +146,17 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Combined Introduction and Brands Section */}
+      {/* Featured Sectors Section */}
+      <FeaturedSectors />
+
+      {/* Combined Introduction and Brands Section
       <div className="relative w-full py-20 overflow-hidden">
-        {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img src={backImg} alt="Background" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/80" /> {/* Dark overlay for readability */}
+          <div className="absolute inset-0 bg-black/80" />
         </div>
 
         <div className="relative z-10 container mx-auto px-4">
-          {/* Introduction Box */}
           <div className="max-w-3xl mx-auto mb-16 p-6 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg shadow-[0_0_20px_rgba(255,255,255,0.1)] animate-thunder">
             <div className="text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
@@ -166,7 +168,6 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Our Brands Slider */}
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Our Brands</h2>
             <p className="text-gray-400">Trusted partners in our journey of excellence</p>
@@ -191,6 +192,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      */}
 
       {/* Business Sectors - Grid Layout */}
       <Section className="py-24">
@@ -374,6 +376,23 @@ const Home = () => {
           })}
         </div>
       </Section>
+
+      {/* Brand Strip - Varun Group Style */}
+      <div className="w-full bg-gradient-to-r from-blue-100 via-white to-blue-100 py-8 border-y border-gray-200">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            {brandLogos.map((brand, index) => (
+              <div key={index} className="w-24 md:w-32 h-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
+                <img
+                  src={brand.src}
+                  alt={brand.alt}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* Community / Sustainability Section - Full Width Image */}
       <div className="relative h-[600px] w-full overflow-hidden">
