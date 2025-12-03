@@ -109,7 +109,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="bg-[#121212] p-8 rounded-2xl border border-gray-800 hover:border-blue-500/50 transition-colors order-2 md:order-1">
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-white mb-2">Sri Bekkari Venkat Reddy Garu</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Sri Bekkari Balakista Reddy Garu</h3>
                 <span className="text-blue-400 font-medium tracking-wider uppercase text-sm">Our Inspiration</span>
               </div>
               <p className="text-gray-400 leading-relaxed">
