@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed w-full z-50 transition-all duration-300 ${scrolled || location.pathname === '/' ? 'bg-[#121212]/90 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'
+        className={`fixed w-full z-50 transition-all duration-300 ${scrolled || location.pathname === '/' ? 'bg-[#fa6823] backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'
           }`}
       >
         <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
@@ -45,15 +45,15 @@ const Navbar = () => {
                 <div key={link.name} className="relative group">
                   {link.dropdown ? (
                     <button
-                      className="flex items-center text-base font-bold transition-colors hover:text-[#a6481b] text-white"
+                      className="flex items-center text-base font-bold transition-colors hover:text-black text-white"
                     >
                       {link.name} <ChevronDown size={16} className="ml-1" />
                     </button>
                   ) : (
                     <Link
                       to={link.path}
-                      className={`text-base font-bold transition-colors hover:text-[#a6481b] ${location.pathname === link.path
-                        ? 'text-[#a6481b]'
+                      className={`text-base font-bold transition-colors hover:text-black ${location.pathname === link.path
+                        ? 'text-black'
                         : 'text-white'
                         }`}
                     >
@@ -113,7 +113,7 @@ const Navbar = () => {
             }
             <button
               onClick={() => setIsContactModalOpen(true)}
-              className="bg-[#a6481b] text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-[#a6481b] transition-colors"
+              className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors"
             >
               Get in Touch
             </button >
@@ -171,7 +171,7 @@ const Navbar = () => {
                   ) : (
                     <Link
                       to={link.path}
-                      className={`block text-base font-medium ${location.pathname === link.path ? 'text-[#a6481b]' : 'text-gray-700'
+                      className={`block text-base font-medium ${location.pathname === link.path ? 'text-[#fa6823]' : 'text-gray-700'
                         }`}
                     >
                       {link.name}
@@ -184,7 +184,7 @@ const Navbar = () => {
                   setIsOpen(false);
                   setIsContactModalOpen(true);
                 }}
-                className="bg-[#a6481b] text-white px-5 py-2 rounded-full text-sm font-medium w-full"
+                className="bg-[#fa6823] text-white px-5 py-2 rounded-full text-sm font-medium w-full"
               >
                 Get in Touch
               </button>
