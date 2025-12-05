@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import heroVideo from '../assets/hero2.mp4';
+import heroVideo from '../assets/hero3.mp4';
 
 const Hero = () => {
   return (
