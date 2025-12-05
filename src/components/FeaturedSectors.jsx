@@ -7,6 +7,7 @@ import sectorMarutiArena from '../assets/homebrandsecto/maruti_suzuki_arena.png'
 import sectorManufacturing from '../assets/homebrandsecto/manufacturing_unit.png';
 import l1 from '../assets/l1.png';
 import l2 from '../assets/l2.png';
+import l3 from '../assets/l3.png';
 const FeaturedSectors = () => {
   return (
     <div className="w-full bg-[#121212] py-12 border-b border-gray-800">
@@ -116,7 +117,7 @@ const FeaturedSectors = () => {
             {/* Image Side */}
             <div className="w-full md:w-1/2 relative h-64 md:h-auto">
               <img
-                src={sectorMarutiArena}
+                src={l3}
                 alt="Automobiles"
                 className="absolute inset-0 w-full h-full object-cover"
               />
