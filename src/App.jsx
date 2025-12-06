@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
@@ -12,10 +12,35 @@ import TermsOfUse from './pages/TermsOfUse';
 import ScrollToTop from './components/ScrollToTop';
 
 import VerticalDetails from './pages/VerticalDetails';
+import speechAudio from './assets/speech.mp3';
+import AudioPopup from './components/AudioPopup';
 
 function App() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    // Show popup after a short delay (e.g., 3 seconds as originally requested for the audio, or sooner)
+    // The user said "when website opened after 3 seconds this audio should be come"
+    // Then "put this as popup after closeing popup audio should be come"
+    // So let's show popup first (maybe after 1s), then play audio on close.
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+    // Play audio after closing
+    const audio = new Audio(speechAudio);
+    audio.play().catch(e => console.error("Audio play failed:", e));
+  };
+
+
   return (
     <>
+      <AudioPopup isOpen={showPopup} onClose={handleClosePopup} />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainLayout />}>
