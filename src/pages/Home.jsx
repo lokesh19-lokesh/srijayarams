@@ -55,6 +55,7 @@ import sectorShaktiman from '../assets/homebrandsecto/shaktiman_agro.png';
 import sectorSriRama from '../assets/homebrandsecto/sir_rama_landmark.png';
 import sectorTotalEnergies from '../assets/homebrandsecto/total_energies.png';
 import sectorTvs from '../assets/homebrandsecto/tvs_motors.png';
+import sectorNgo from '../assets/ngo.png';
 
 const brandLogos = [
   { src: commercial, alt: 'Commercial' },
@@ -100,7 +101,7 @@ const Home = () => {
     {
       id: 'ngo',
       title: 'NGO',
-      image: sectorSriRama,
+      image: sectorNgo,
       description: 'Serving the community through our welfare initiatives.',
       type: 'link',
       link: '/ngo'
