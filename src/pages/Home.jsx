@@ -56,6 +56,7 @@ import sectorSriRama from '../assets/homebrandsecto/sir_rama_landmark.png';
 import sectorTotalEnergies from '../assets/homebrandsecto/total_energies.png';
 import sectorTvs from '../assets/homebrandsecto/tvs_motors.png';
 import sectorNgo from '../assets/ngo.png';
+import sectorFinance from '../assets/finance.png';
 
 const brandLogos = [
   { src: commercial, alt: 'Commercial' },
@@ -109,7 +110,7 @@ const Home = () => {
     {
       id: 'finance',
       title: 'Finance',
-      image: sectorTotalEnergies,
+      image: sectorFinance,
       description: 'Financial solutions empowering your growth.',
       type: 'link',
       link: '/finance'
