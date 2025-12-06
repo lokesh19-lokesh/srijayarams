@@ -8,7 +8,7 @@ import Card from '../components/Card';
 import Button from '../components/Button';
 import FAQ from '../components/FAQ';
 import { stories, verticals } from '../data/mockData';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowLeft } from 'lucide-react';
 import bg from '../assets/hf.avif';
 import FeaturedSectors from '../components/FeaturedSectors';
 
@@ -79,10 +79,58 @@ const brandLogos = [
 ];
 
 const Home = () => {
-  const [showAllSectors, setShowAllSectors] = useState(false);
+  const [activeCategory, setActiveCategory] = useState(null);
 
-  // Show first 4 or all verticals based on state
-  const displayedVerticals = showAllSectors ? verticals : verticals.slice(0, 4);
+  // Define the main 4 categories
+  const mainCategories = [
+    {
+      id: 'automobiles',
+      title: 'Automobiles',
+      image: sectorMarutiArena,
+      description: 'Leading the way in mobility with Maruti Suzuki, Nexa, and TVS.',
+      type: 'category'
+    },
+    {
+      id: 'construction',
+      title: 'Construction',
+      image: sectorMahindraConstruction,
+      description: 'Building the future with Mahindra Construction Equipment.',
+      type: 'category'
+    },
+    {
+      id: 'ngo',
+      title: 'NGO',
+      image: sectorSriRama,
+      description: 'Serving the community through our welfare initiatives.',
+      type: 'link',
+      link: '/ngo'
+    },
+    {
+      id: 'finance',
+      title: 'Finance',
+      image: sectorTotalEnergies,
+      description: 'Financial solutions empowering your growth.',
+      type: 'link',
+      link: '/finance'
+    }
+  ];
+
+  // Logic to filter verticals based on active category
+  const getCategoryVerticals = () => {
+    if (activeCategory === 'automobiles') {
+      return verticals.filter(v =>
+        v.id.includes('maruti') || v.id.includes('tvs') || v.id.includes('goodyear') || v.id.includes('roots')
+      );
+    }
+    if (activeCategory === 'construction') {
+      return verticals.filter(v =>
+        v.id.includes('mahindra-construction') || v.id.includes('sri-rama') || v.id.includes('manufacturing')
+      );
+    }
+    return [];
+  };
+
+  const displayedItems = activeCategory ? getCategoryVerticals() : mainCategories;
 
   // Map IDs to imported images
   const sectorImages = {
@@ -203,46 +251,82 @@ const Home = () => {
       <Section className="py-24">
         <div className="flex justify-between items-end mb-16 px-4">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Business Sectors</h2>
-            <p className="text-gray-400 text-lg">Driving growth across diverse industries</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              {activeCategory ? `${activeCategory.charAt(0).toUpperCase() + activeCategory.slice(1)} Sectors` : 'Business Sectors'}
+            </h2>
+            <p className="text-gray-400 text-lg">
+              {activeCategory ? 'Explore our specialized verticals' : 'Driving growth across diverse industries'}
+            </p>
           </div>
-          <Button
-            onClick={() => setShowAllSectors(!showAllSectors)}
-            variant="outline"
-            className="hidden md:inline-flex border-gray-600 text-white hover:bg-white hover:text-black"
-          >
-            {showAllSectors ? 'View Less Sectors' : 'View All Sectors'}
-          </Button>
+
+          {activeCategory && (
+            <Button
+              onClick={() => setActiveCategory(null)}
+              variant="outline"
+              className="inline-flex items-center border-gray-600 text-white hover:bg-white hover:text-black gap-2"
+            >
+              <ArrowLeft size={16} /> Back to Sectors
+            </Button>
+          )}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
-          {displayedVerticals.map((vertical) => {
-            const isExternal = vertical.external || (vertical.link && vertical.link.startsWith('http'));
-            const displayImage = sectorImages[vertical.id] || vertical.image;
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+          {displayedItems.map((item) => {
+            // Determine handling based on item type (Category vs Vertical)
+            const isCategory = !activeCategory;
 
-            const CardContent = () => (
+            // For Categories (Initial View)
+            if (isCategory) {
+              const Content = (
+                <div className="relative h-[350px] rounded-2xl overflow-hidden group cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="absolute inset-0 w-full h-full object-cover bg-gray-800 transform group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 w-full p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="mb-2 w-12 h-1 bg-orange-500 rounded-full mb-4" />
+                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">{item.title}</h3>
+                    <p className="text-gray-300 text-sm line-clamp-2 md:line-clamp-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              );
+
+              if (item.type === 'link') {
+                return (
+                  <Link key={item.id} to={item.link} className="block h-full">
+                    {Content}
+                  </Link>
+                );
+              } else {
+                return (
+                  <div key={item.id} onClick={() => setActiveCategory(item.id)} className="block h-full">
+                    {Content}
+                  </div>
+                );
+              }
+            }
+
+            // For Drill-Down Verticals (Same Style as before)
+            const isExternal = item.external || (item.link && item.link.startsWith('http'));
+            const displayImage = sectorImages[item.id] || item.image;
+
+            const VerticalContent = () => (
               <div className="relative h-[350px] rounded-2xl overflow-hidden group cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
-                {/* Background Image */}
                 <img
                   src={displayImage}
-                  alt={vertical.title}
+                  alt={item.title}
                   className="absolute inset-0 w-full h-full object-contain bg-white transform group-hover:scale-110 transition-transform duration-700"
                 />
-
-                {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
-
-                {/* Content */}
                 <div className="absolute bottom-0 left-0 w-full p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   <div className="mb-2 w-12 h-1 bg-blue-500 rounded-full mb-4" />
                   <h3 className="text-xl font-bold text-white mb-2 leading-tight group-hover:text-blue-400 transition-colors">
-                    {vertical.title}
+                    {item.title}
                   </h3>
-                  <p className="text-gray-300 text-sm line-clamp-2 group-hover:line-clamp-none group-hover:text-white transition-all duration-300">
-                    {vertical.description}
-                  </p>
-
-                  {/* Arrow Icon */}
                   <div className="mt-4 flex items-center text-blue-400 text-sm font-semibold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-100">
                     Explore <ArrowRight size={16} className="ml-2" />
                   </div>
@@ -251,24 +335,15 @@ const Home = () => {
             );
 
             return isExternal ? (
-              <a key={vertical.id} href={vertical.link} target="_blank" rel="noopener noreferrer" className="block h-full">
-                <CardContent />
+              <a key={item.id} href={item.link} target="_blank" rel="noopener noreferrer" className="block h-full">
+                <VerticalContent />
               </a>
             ) : (
-              <Link key={vertical.id} to={vertical.link} className="block h-full">
-                <CardContent />
+              <Link key={item.id} to={item.link} className="block h-full">
+                <VerticalContent />
               </Link>
             );
           })}
-        </div>
-        <div className="mt-12 text-center md:hidden">
-          <Button
-            onClick={() => setShowAllSectors(!showAllSectors)}
-            variant="outline"
-            className="border-gray-600 text-white hover:bg-white hover:text-black"
-          >
-            {showAllSectors ? 'View Less Sectors' : 'View All Sectors'}
-          </Button>
         </div>
       </Section>
 
