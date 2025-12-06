@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Hero from '../components/Hero';
+import Hero3D from '../components/Hero3D';
 import Section from '../components/Section';
 import Card from '../components/Card';
 import Button from '../components/Button';
@@ -139,6 +140,7 @@ const Home = () => {
         }}
       />
       <Hero />
+      <Hero3D />
 
       {/* Inspiration Ticker */}
       <div className="bg-blue-900/20 border-y border-blue-500/20 py-4 overflow-hidden relative">
