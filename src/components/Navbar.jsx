@@ -29,8 +29,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed w-full z-50 transition-all duration-300 ${scrolled || location.pathname === '/' ? 'bg-[#fa6823] backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'
-          }`}
+        className="fixed w-full z-50 transition-all duration-300 bg-[#fa6823] backdrop-blur-md shadow-md py-3"
       >
         <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
           {/* Logo */}
