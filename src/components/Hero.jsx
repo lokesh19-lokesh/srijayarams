@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import heroVideo from '../assets/hero3.mp4';
+import heroVideo from '../assets/hhero4.mp4';
 
 const Hero = () => {
   return (
@@ -37,7 +37,7 @@ const Hero = () => {
             className="max-w-xl"
           >
             <span className="block text-[#fa6823] font-bold tracking-wider uppercase mb-0 mt-10">
-              Welcome to Sri Jayarama Group
+              Welcome to Sri Rama Jayarama Group
             </span>
             <h1 className="text-6xl font-bold text-black leading-tight mb-6">
               Driving Growth <br />
@@ -55,20 +55,50 @@ const Hero = () => {
       </div>
 
       {/* Mobile View - Full Screen Video */}
-      <div className="md:hidden relative w-full h-screen overflow-hidden">
-        <video
-          src={heroVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/30" /> {/* Overlay */}
+      {/* Mobile View - Split Layout (Video Left, Text Right) */}
+      <div className="md:hidden flex flex-row w-full h-[40vh] bg-white overflow-hidden relative mt-24">
+        {/* Left Side - Video with Shape */}
+        <div className="absolute top-0 left-0 w-[55%] h-full z-0">
+          <div
+            className="absolute inset-0 w-full h-full overflow-hidden"
+            style={{
+              clipPath: 'ellipse(85% 100% at 15% 50%)',
+              WebkitClipPath: 'ellipse(85% 100% at 15% 50%)'
+            }}
+          >
+            <div className="absolute inset-0 bg-black/20 z-10" />
+            <video
+              src={heroVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
 
-        {/* Mobile Content Overlay */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
-          {/* Content can be added here if needed, currently keeping it clean as per image */}
+        {/* Right Side - Text Content */}
+        <div className="w-[45%] ml-auto flex flex-col justify-center px-4 z-10 bg-white">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }} // Animation from right
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="block text-[#fa6823] font-bold text-[10px] tracking-wider uppercase mb-1">
+              Welcome to Sri Jayarama
+            </span>
+            <h1 className="text-2xl font-bold text-black leading-tight mb-2">
+              Driving <br />
+              <span className="text-[#fa6823]">Growth</span>
+            </h1>
+            <p className="text-[10px] text-gray-600 mb-3 leading-relaxed line-clamp-4">
+              We are a diversified conglomerate committed to excellence across multiple sectors.
+            </p>
+            <button className="bg-[#fa6823] text-white px-4 py-2 rounded-full font-bold text-[10px] hover:bg-black transition-all shadow-md">
+              Discover More
+            </button>
+          </motion.div>
         </div>
       </div>
     </>

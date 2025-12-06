@@ -15,7 +15,7 @@ import FeaturedSectors from '../components/FeaturedSectors';
 import backImg from '../assets/back.jpg';
 
 // Import Hero Video
-import heroVideo from '../assets/hero2.mp4';
+// import heroVideo from '../assets/hero1.mp4';
 
 // Import Brand Logos
 import commercial from '../assets/brands/commercial.png';
