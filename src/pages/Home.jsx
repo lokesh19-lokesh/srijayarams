@@ -329,9 +329,7 @@ const Home = () => {
                   <h3 className="text-xl font-bold text-white mb-2 leading-tight group-hover:text-blue-400 transition-colors">
                     {item.title}
                   </h3>
-                  <div className="mt-4 flex items-center text-blue-400 text-sm font-semibold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-100">
-                    Explore <ArrowRight size={16} className="ml-2" />
-                  </div>
+
                 </div>
               </div>
             );

@@ -51,9 +51,7 @@ const FeaturedSectors = () => {
                   </p>
                   <span className="text-white/70 text-sm italic block mb-6">Reliability • Efficiency • Power</span>
 
-                  <div className="flex items-center text-white/90 font-semibold cursor-pointer hover:text-white transition-colors group">
-                    Explore <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </div>
+
                 </div>
               </div>
 
@@ -90,9 +88,7 @@ const FeaturedSectors = () => {
                   </p>
                   <span className="text-white/70 text-sm italic block mb-6">Innovation • Quality • Precision</span>
 
-                  <div className="flex items-center text-white/90 font-semibold cursor-pointer hover:text-white transition-colors group">
-                    Explore <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </div>
+
                 </div>
               </div>
 
@@ -149,9 +145,7 @@ const FeaturedSectors = () => {
                   </p>
                   <span className="text-white/70 text-sm italic block mb-6">Maruti Suzuki • Nexa • TVS</span>
 
-                  <div className="flex items-center text-white/90 font-semibold cursor-pointer hover:text-white transition-colors group">
-                    Explore <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </div>
+
                 </div>
               </div>
 
