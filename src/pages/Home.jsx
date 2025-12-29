@@ -11,6 +11,7 @@ import { stories, verticals } from '../data/mockData';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import bg from '../assets/hf.avif';
 import FeaturedSectors from '../components/FeaturedSectors';
+import VideoHero from '../components/VideoHero';
 
 // Import Background Image
 import backImg from '../assets/back.jpg';
@@ -189,6 +190,7 @@ const Home = () => {
           ]
         }}
       />
+      <VideoHero />
       <Hero />
       <Hero3D />
 

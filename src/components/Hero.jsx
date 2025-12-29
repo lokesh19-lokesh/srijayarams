@@ -56,7 +56,7 @@ const Hero = () => {
 
       {/* Mobile View - Full Screen Video */}
       {/* Mobile View - Split Layout (Video Left, Text Right) */}
-      <div className="md:hidden flex flex-row w-full h-[40vh] bg-white overflow-hidden relative mt-24">
+      <div className="md:hidden flex flex-row w-full h-[40vh] bg-white overflow-hidden relative">
         {/* Left Side - Video with Shape */}
         <div className="absolute top-0 left-0 w-[55%] h-full z-0">
           <div
