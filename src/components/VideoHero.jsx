@@ -7,7 +7,8 @@ const VideoHero = () => {
     <div className="w-full mt-20">
       <video
         src={hhVideo}
-        className="w-full h-auto object-cover"
+        // className="w-full h-auto object-cover"
+        className="w-full h-[550px] object-cover"
         autoPlay
         loop
         muted
