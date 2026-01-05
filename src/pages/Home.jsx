@@ -43,6 +43,7 @@ import tvs from '../assets/brands/tvs.png';
 // Import Sector Images
 import sectorExide from '../assets/homebrandsecto/exide.jpeg';
 import sectorGoodyear from '../assets/homebrandsecto/goodyear_tyre.png';
+import con from '../assets/con1.jpg';
 import sectorMahindraConstruction from '../assets/homebrandsecto/mahindra _construction_equipment.png';
 import sectorMahindraXChange from '../assets/homebrandsecto/mahindra_tractor_x_change.png';
 import sectorMahindraTractors from '../assets/homebrandsecto/mahindra_tractors1.webp';
@@ -96,7 +97,7 @@ const Home = () => {
     {
       id: 'construction',
       title: 'Construction',
-      image: sectorMahindraConstruction,
+      image: con,
       description: 'Building the future with Mahindra Construction Equipment.',
       type: 'category'
     },
@@ -122,12 +123,12 @@ const Home = () => {
   const getCategoryVerticals = () => {
     if (activeCategory === 'automobiles') {
       return verticals.filter(v =>
-        v.id.includes('maruti') || v.id.includes('tvs') || v.id.includes('goodyear') || v.id.includes('roots')
+        v.id.includes('maruti') || v.id.includes('tvs') || v.id.includes('goodyear') || v.id.includes('roots') || v.id.includes('mahindra-construction')
       );
     }
     if (activeCategory === 'construction') {
       return verticals.filter(v =>
-        v.id.includes('mahindra-construction') || v.id.includes('sri-rama') || v.id.includes('manufacturing')
+        v.id.includes('sri-rama') || v.id.includes('manufacturing')
       );
     }
     return [];
