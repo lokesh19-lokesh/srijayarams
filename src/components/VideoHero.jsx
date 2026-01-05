@@ -13,6 +13,7 @@ const VideoHero = () => {
         loop
         muted
         playsInline
+        disablePictureInPicture
       />
     </div>
   );
